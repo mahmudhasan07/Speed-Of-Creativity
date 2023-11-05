@@ -5,11 +5,11 @@ import Swal from "sweetalert2";
 
 
 const AddItem = () => {
-const axiosLink = useAxios(AxiosSource)
-const {user} = useContext(Context)
-// console.log(user.email);
-const email = user?.email
-    const handleadditem =e=>{
+    const axiosLink = useAxios(AxiosSource)
+    const { user } = useContext(Context)
+    // console.log(user.email);
+    const email = user?.email
+    const handleadditem = e => {
         e.preventDefault()
         const from = e.target
 
@@ -21,22 +21,25 @@ const email = user?.email
         const level = from.level.value
 
         // console.log(title,note,date,marks,image,level);
-        const items = {title,note,date,marks,image,level, email}
+        const items = { title, note, date, marks, image, level, email }
 
         axiosLink.post('/items', items)
-        .then(res=>{
-            // console.log(res.data);
-            Swal.fire('Successfully Add Your Assignment')
-        })
-        .catch(error=>{
-            console.log(error);
-        })
+            .then(res => {
+                // console.log(res.data);
+                Swal.fire({
+                    icon: "success",
+                    text: 'Successfully Add Your Assignment'
+                })
+            })
+            .catch(error => {
+                console.log(error);
+            })
 
 
     }
     return (
         <section className=" bg-base-200 min-h-screen">
-                <h1 className="text-4xl font-bold text-center lg:py-10 py-5">Add Your Assignment </h1>
+            <h1 className="text-4xl font-bold text-center lg:py-10 py-5">Add Your Assignment </h1>
             <div className="mx-10 border-2 bg-base-100 p-5 rounded-xl shadow-2xl">
                 <form onSubmit={handleadditem} className="" action="">
                     <div className="flex my-1 flex-wrap justify-center w-full ">
@@ -88,9 +91,9 @@ const email = user?.email
                         </div>
 
                     </div>
-            <div className="lg:mx-16 mx-6  mt-5">
-                <button className="btn my-5 w-full bg-blue-600 text-white">Add Item</button>
-            </div>
+                    <div className="lg:mx-16 mx-6  mt-5">
+                        <button className="btn my-5 w-full bg-blue-600 text-white">Add Item</button>
+                    </div>
                 </form>
             </div>
 

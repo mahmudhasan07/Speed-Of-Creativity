@@ -29,7 +29,10 @@ const UpdateInfo = () => {
         axiosLink.put(`/items/update/${loader?._id}`, items)
             .then(res => {
                 // console.log(res.data);
-                Swal.fire('Successfully Update Your Assignment')
+                Swal.fire({
+                    icon: "success",
+                    text: 'Successfully Add Your Assignment'
+                })
             })
             .catch(error => {
                 console.log(error);

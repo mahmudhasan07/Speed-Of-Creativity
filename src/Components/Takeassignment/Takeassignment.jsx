@@ -1,8 +1,42 @@
 import { useLoaderData } from "react-router-dom";
+import useAxios, { AxiosSource } from "../Axios/useAxios";
+import { useContext } from "react";
+import { Context } from "../ContextAPI/ContextAPI";
+import Swal from "sweetalert2";
 
 const Takeassignment = () => {
     const loader = useLoaderData()
     console.log(loader);
+    const {user}= useContext(Context)
+    const Submitemail = user?.email 
+    const title = loader.title
+    const Givenemail = loader.email
+    const mark = loader.marks
+    const axiosLink = useAxios(AxiosSource)
+
+    const handlesubmit=(e)=>{
+        e.preventDefault();
+        const from = e.target
+        const assignmentLink = from.link.value
+        const note = from.note.value
+        console.log(title,Submitemail,Givenemail,assignmentLink,note);
+        const info = {title,Submitemail,Givenemail,assignmentLink,note,mark}
+        axiosLink.post(`/submit-assignment`,info)
+        .then(res=>{
+            console.log(res.data);
+            Swal.fire({
+                icon: "success",
+                title: "Submit",
+                text: "Successfully submit your assignment",
+                footer: '<a href="#">Why do I have this issue?</a>'
+              });
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+    }
+
+
     return (
         <section>
             <h1 className="text-3xl font-bold text-center">Submit Your Assignment</h1>
@@ -11,10 +45,10 @@ const Takeassignment = () => {
                 <p className="text-lg font-semibold">Assignment Marks: {loader.marks}</p>
             </div>
             <div className="lg:my-10 my-5">
-                <form className="text-center" action="">
-                    <input type="text" className="border-2 border-blue-600 p-2 w-96 rounded-2xl mb-5" placeholder="input your assignment google link" /> <br />
+                <form onSubmit={handlesubmit} className="text-center" action="">
+                    <input name="link" type="text" className="border-2 border-blue-600 p-2 w-96 rounded-2xl mb-5" placeholder="input your assignment google link" /> <br />
                     {/* <input type="" className="border-2 border-blue-600 p-2  w-96 rounded-2xl" placeholder="give a short note of your assignment " /> */}
-                    <textarea className="border-2 border-blue-600 p-2  w-96 rounded-2xl" placeholder={`Enter your assignment details here...`} rows={3} cols={0}></textarea><br /><br />
+                    <textarea name="note" className="border-2 border-blue-600 p-2  w-96 rounded-2xl" placeholder={`Enter your assignment details here...`} rows={3} cols={0}></textarea><br /><br />
                     <button className="btn bg-blue-600 text-white">Submit Assignment</button>
                 </form>
             </div>
