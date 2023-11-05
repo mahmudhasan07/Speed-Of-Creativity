@@ -22,7 +22,7 @@ const ContextAPI = ({ children }) => {
     }
 
     const logOut = () => {
-
+        setloading(true)
         return signOut(auth)
     }
 
@@ -36,23 +36,24 @@ const ContextAPI = ({ children }) => {
     useEffect(() => {
         onAuthStateChanged(auth, (customer) => {
             setuser(customer)
+            setloading(false)
             // console.log(customer);
-          const email = customer?.email
+            const email = customer?.email
 
-            if(customer !== null){
-              axiosLink.post(`/jwt`, {email})  
-              .then(res=>{
-                  console.log(res.data);
-              })
-              .catch(error=>{
-                console.log(error);
-              })
+            if (customer !== null) {
+                axiosLink.post(`/jwt`, { email })
+                    .then(res => {
+                        console.log(res.data);
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
             }
         })
-    }, [auth])
+    }, [auth, axiosLink])
 
 
-    const data = {createUser, signUser, logOut, updateUser, user}
+    const data = { createUser, signUser, logOut, updateUser, user, loading }
     return (
         <Context.Provider value={data}>
             {children}

@@ -39,7 +39,7 @@ const email = user?.email
                 <h1 className="text-4xl font-bold text-center lg:py-10 py-5">Add Your Assignment </h1>
             <div className="mx-10 border-2 bg-base-100 p-5 rounded-xl shadow-2xl">
                 <form onSubmit={handleadditem} className="" action="">
-                    <div className="flex  flex-wrap justify-center w-full ">
+                    <div className="flex my-1 flex-wrap justify-center w-full ">
                         <div className="flex-1">
                             <label className="label">
                                 <span className=" font-semibold">Title</span>
@@ -54,7 +54,7 @@ const email = user?.email
                         </div>
 
                     </div>
-                    <div className="flex  flex-wrap justify-center w-full ">
+                    <div className="flex my-1 flex-wrap justify-center w-full ">
                         <div className="flex-1">
                             <label className="label">
                                 <span className=" font-semibold">Difficulty Level</span>
@@ -73,7 +73,7 @@ const email = user?.email
                         </div>
 
                     </div>
-                    <div className="flex flex-wrap justify-center w-full ">
+                    <div className="flex my-1 flex-wrap justify-center w-full ">
                         <div className="flex-1">
                             <label className="label">
                                 <span className=" font-semibold">Marks</span>
@@ -89,7 +89,7 @@ const email = user?.email
 
                     </div>
             <div className="lg:mx-16 mx-6  mt-5">
-                <button className="btn w-full bg-blue-600 text-white">Add Item</button>
+                <button className="btn my-5 w-full bg-blue-600 text-white">Add Item</button>
             </div>
                 </form>
             </div>

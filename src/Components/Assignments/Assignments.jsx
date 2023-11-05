@@ -1,15 +1,30 @@
-import { useState } from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 
 
 const Assignments = () => {
     const loader = useLoaderData()
-    const [array, setarray] = useState(loader)
+    const [array, setarray] = useState([])
+    const [array1, setarray1] = useState([])
     const [perpageitem, setperpageitem] = useState(6)
     const [currentpage, setcurrentpage] = useState(1)
-    const[lengths,setlengths]= useState(loader.length)
+    const [lengths, setlengths] = useState(loader.length)
     const [start, setstart] = useState(0)
-    const [end, setend] = useState(perpageitem) 
+    const [end, setend] = useState(perpageitem)
+    const id = useParams()
+    console.log(id.text);
+    useEffect(() => {
+        if (id.text !== undefined) {
+            const search = loader.filter(element => element.title.toLowerCase().includes(id.text))
+            console.log(search);
+            setarray(search)
+            setarray1(search)
+            setlengths(search.length)
+        }
+        else {
+            setarray(loader)
+        }
+    }, [id, loader])
     // console.log(lengths);
     const btn = Math.ceil(lengths / perpageitem)
 
@@ -21,29 +36,58 @@ const Assignments = () => {
         const value = e.target.value
         console.log(value);
         if (value == "default") {
-            setlengths(loader.length)
+            if (id.text !== undefined) {
+                setarray(array1)
+            }
+            else{
+                setlengths(loader.length)
             setarray(loader)
+            }
         }
         if (value == "easy") {
-            const items = loader.filter(element => element.level == value)
-            console.log(items);
-            setarray(items)
-            setcurrentpage(1)
-            setlengths(items.length)
+            if (id.text !== undefined) {
+                const item = array1.filter(element => element.level == value)
+                setarray(item)
+                setcurrentpage(1)
+                setlengths(item.length)
+            }
+            else {
+                const items = loader.filter(element => element.level == value)
+                console.log(items);
+                setarray(items)
+                setcurrentpage(1)
+                setlengths(items.length)
+            }
         }
         if (value == "medium") {
-            const items = loader.filter(element => element.level == value)
-            console.log(items);
-            setarray(items)
-            setcurrentpage(1)
-            setlengths(items.length)
+            if (id.text !== undefined) {
+                const item = array1.filter(element => element.level == value)
+                setarray(item)
+                setcurrentpage(1)
+                setlengths(item.length)
+            }
+            else {
+                const items = loader.filter(element => element.level == value)
+                console.log(items);
+                setarray(items)
+                setcurrentpage(1)
+                setlengths(items.length)
+            }
         }
         if (value == "hard") {
-            const items = loader.filter(element => element.level == value)
-            console.log(items);
-            setarray(items)
-            setcurrentpage(1)
-            setlengths(items.length)
+            if (id.text !== undefined) {
+                const item = array1.filter(element => element.level == value)
+                setarray(item)
+                setcurrentpage(1)
+                setlengths(item.length)
+            }
+            else {
+                const items = loader.filter(element => element.level == value)
+                console.log(items);
+                setarray(items)
+                setcurrentpage(1)
+                setlengths(items.length)
+            }
         }
     }
 
@@ -64,7 +108,7 @@ const Assignments = () => {
                         <span><input type="checkbox" />upto 80 marks</span>
                         <span><input type="checkbox" />upto 70 marks</span>
                     </form>
-                    
+
                 </div>
                 <div className="">
                     <div className="flex justify-end lg:mr-5 mr-2 ">
@@ -106,8 +150,8 @@ const Card = ({ card }) => {
                 <p className="font-semibold"><span className="text-lg">Posted By: </span>{card.email}</p>
             </div>
             <div className="flex justify-around">
-                <button onClick={()=>navigate(`/assignment/info/${card.title}`)} className="btn bg-blue-600 text-white">View Assignment</button>
-                <button onClick={()=>navigate(`/assignment/update/${card._id}`)} className="btn bg-blue-600 text-white">Update Assignment</button>
+                <button onClick={() => navigate(`/assignment/info/${card.title}`)} className="btn bg-blue-600 text-white">View Assignment</button>
+                <button onClick={() => navigate(`/assignment/update/${card._id}`)} className="btn bg-blue-600 text-white">Update Assignment</button>
             </div>
         </div>
     )

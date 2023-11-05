@@ -11,8 +11,8 @@ const Features = () => {
     }, [])
 
     return (
-        <section className="lg:my-10 my-5">
-            <h1 className="text-3xl text-center font-bold">Features Of Your Assignments and Projects</h1>
+        <section className="lg:my-16 my-5">
+            <h1 className="text-3xl text-center font-bold underline">Features Of Your Assignments and Projects</h1>
             <div className="lg:my-8 my-4 flex justify-center flex-wrap gap-5">
                 {
                     array.map((element, idx) => <Card key={idx} card={element}></Card>)

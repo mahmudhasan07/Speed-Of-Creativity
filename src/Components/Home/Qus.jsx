@@ -4,7 +4,7 @@ const Qus = () => {
     return (
         <section>
             <h1 className="text-3xl text-center font-bold lg:my-10 my-5">Frequently Asked Questions</h1>
-            <div className="flex justify-between flex-wrap ">
+            <div className="flex justify-between flex-wrap my-5">
                 <div className="flex-1 my-auto">
                     <img className=" mx-auto rounded-xl w-3/4 border-2 border-blue-600" src="https://i.ibb.co/0QGSMb1/Qus1.png" alt="" />
                 </div>

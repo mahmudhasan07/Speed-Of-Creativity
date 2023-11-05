@@ -7,7 +7,7 @@ const Footer = () => {
                 <div className="max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 lg:pt-20 mx-auto">
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 ">
                         <div className="col-span-full lg:col-span-1">
-                            <a className="flex-none text-xl font-semibold text-white" href="#" aria-label="Brand">Brand</a>
+                            <a className="flex-none text-xl font-semibold text-white" href="/" aria-label="Brand">Speed Of Creativity</a>
                         </div>
 
 

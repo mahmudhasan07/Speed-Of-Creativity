@@ -7,16 +7,16 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 
 const NavBar = () => {
-    const {user, logOut} = useContext(Context)
-    // console.log(user);
+    const { user, logOut } = useContext(Context)
+    console.log(user);
     const search = useRef()
 
     const navigate = useNavigate()
 
     const handlesearch = (e) => {
         e.preventDefault()
-        const id = search.current.value
-        navigate(`/search/${id}`)
+        const text = search.current.value
+        navigate(`/search/${text}`)
         // console.log(id)
         search.current.value = ""
     }
@@ -52,14 +52,14 @@ const NavBar = () => {
                             <hr />
                             <NavLink to={``}><li className="my-1 font-semibold">Submitted Assignment</li></NavLink>
                         </ul>
-                <div className=" ">
-                <NavLink to={`/login`}><button className="btn btn-sm" >Login</button></NavLink>
-                </div>
+                        <div className=" ">
+                            <NavLink to={`/login`}><button className="btn btn-sm" >Login</button></NavLink>
+                        </div>
                     </div>
                 </div>
             </div>
             <div>
-                <h1 className="text-2xl  font-bold">Speed Of Creativity</h1>
+                <NavLink to={`/`}><h1 className="text-2xl  font-bold">Speed Of Creativity</h1></NavLink>
             </div>
             <div>
                 <ul className="lg:flex hidden gap-5 text-center">
@@ -68,23 +68,28 @@ const NavBar = () => {
                     }
                 </ul>
             </div>
-            <div className="my-auto">
-                <input ref={search} className="border-2 rounded-lg" type="text" />
-                <button onClick={handlesearch} className="btn btn-sm"><AiOutlineSearch></AiOutlineSearch></button>
-            </div>
+            
             <div className="hidden lg:flex my-auto hs-dropdown">
                 {
-                    user? 
-                    <div className="hs-dropdown">
-                        <img id="hs-dropdown-default" className="hs-dropdown-toggle" src={user.photoURL} alt="" />
-                        <div className="hs-dropdown-menu">
-                        <p>{user.displayName}</p>
+                    user ?
+                        <div className="hs-dropdown text-black">
+                            <details className="dropdown">
+                                <summary className="btn"><img className="rounded-full w-8" src={user.photoURL} alt="" /></summary>
+                                <ul className="p-2 shadow menu dropdown-content z-1 bg-base-100 rounded-box w-44">
+                                <img id="" className="w-10 mx-auto" src={user.photoURL} alt="" />
+                                <p>{user.displayName}</p>
+                                {/* <p>{user.email}</p> */}
+                            <NavLink to={`/`}><button onClick={() => logOut()} className="btn btn-sm" >LogOut</button></NavLink>
+                                </ul>
+                            </details> 
                         </div>
-                        <NavLink to={`/`}><button onClick={()=> logOut()} className="btn btn-sm" >LogOut</button></NavLink>
-                    </div>
-                    :
-                    <NavLink to={`/login`}><button className="btn btn-sm" >Login</button></NavLink>
+                        :
+                        <NavLink to={`/login`}><button className="btn btn-sm" >Login</button></NavLink>
                 }
+            </div>
+            <div className="my-auto">
+                <input ref={search} className="border-2 rounded-lg text-black p-1" type="text" />
+                <button onClick={handlesearch} className="btn btn-sm"><AiOutlineSearch></AiOutlineSearch></button>
             </div>
 
         </section>

@@ -24,11 +24,11 @@ const Registration = () => {
         createUser(email, password)
             .then(res => {
                 console.log(res);
-                updateUser(name)
+                updateUser(name,photo)
                     .then(res => {
                         console.log(res)
                         logOut()
-                        Swal.fire('SweetAlert2 is working!')
+                        Swal.fire('Successfully Registration')
                     })
                     .catch(error => {
                         console.log(error.message);
@@ -42,12 +42,8 @@ const Registration = () => {
     }
     return (
         <section style={{backgroundImage : "url(https://i.ibb.co/GCgCjqZ/registration.jpg)", backgroundRepeat : "no-repeat" , backgroundPosition : "center"}}>
-            <div className=" h-screen bg-opacity-20 bg-black text-white">
+            <div className=" min-h-screen bg-opacity-20 bg-black text-white">
                 <div className=" lg:py-5 py-3 mb-1 bg-transparent backdrop-blur-lg backdrop:bg-blue-600   w-1/3 mx-auto">
-                    {/* <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    </div> */}
                     <div className=" card  w-full p-3 border-4 shadow-2xl">
                         <h1 className="text-4xl text-center font-bold ">Registration Now ..!</h1>
                         <hr className="mx-3 border-2 mt-5" />
@@ -56,25 +52,25 @@ const Registration = () => {
                                 <label className="label">
                                     <span className="text-white label-text font-semibold text-lg">{name}</span>
                                 </label>
-                                <input onClick={() => setname("Name")} name="name" type="text" placeholder="name" className="input input-bordered" required />
+                                <input onClick={() => setname("Name")} name="name" type="text" placeholder="name" className="text-black input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="text-white label-text font-semibold text-lg">{photo}</span>
                                 </label>
-                                <input onClick={() => setphoto("Photo URL")} name="photo" type="text" placeholder="name" className="input input-bordered" required />
+                                <input onClick={() => setphoto("Photo URL")} name="photo" type="text" placeholder="photo url" className="text-black input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="text-white label-text font-semibold text-lg">{email}</span>
                                 </label>
-                                <input onClick={() => setemail("Email")} name="email" type="email" placeholder="email" className="input input-bordered" required />
+                                <input onClick={() => setemail("Email")} name="email" type="email" placeholder="email" className="text-black input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="text-white label-text font-semibold text-lg">{password}</span>
                                 </label>
-                                <input onClick={() => setpassword('Password')} name="password" type="password" placeholder="password" className="input input-bordered" required />
+                                <input onClick={() => setpassword('Password')} name="password" type="password" placeholder="password" className="text-black input input-bordered" required />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
