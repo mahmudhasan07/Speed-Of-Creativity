@@ -75,11 +75,11 @@ const NavBar = () => {
                         <div className="hs-dropdown text-black">
                             <details className="dropdown">
                                 <summary className="btn"><img className="rounded-full w-8" src={user.photoURL} alt="" /></summary>
-                                <ul className="p-2 shadow menu dropdown-content z-1 bg-base-100 rounded-box w-44">
+                                <ul className="p-2 text-center shadow menu dropdown-content z-10 bg-base-100 rounded-box w-fit">
                                 <img id="" className="w-10 mx-auto" src={user.photoURL} alt="" />
-                                <p>{user.displayName}</p>
-                                {/* <p>{user.email}</p> */}
-                            <NavLink to={`/`}><button onClick={() => logOut()} className="btn btn-sm" >LogOut</button></NavLink>
+                                <p className="mb-1 font-semibold">{user.displayName}</p>
+                                <p className="mb-1 font-semibold">{user.email}</p>
+                            <NavLink to={`/`}><button onClick={() => logOut()} className="btn my-1  btn-sm" >LogOut</button></NavLink>
                                 </ul>
                             </details> 
                         </div>

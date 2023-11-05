@@ -1,13 +1,16 @@
 import { useContext, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Context } from "../ContextAPI/ContextAPI";
 
 
 const Login = () => {
-    const { signUser ,user } = useContext(Context)
+    const { signUser } = useContext(Context)
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
-    const nagivate = useNavigate()
+    const location = useLocation()
+    const navigate = useNavigate()
+    // console.log(location);
+
     const handlelogin = e => {
         e.preventDefault()
         const from = e.target
@@ -18,7 +21,7 @@ const Login = () => {
         signUser(email, password)
             .then(res => {
                 console.log(res);
-                // nagivate(`/`)
+                location.state ? navigate(`/${location.state}`) : navigate('/')
             })
             .catch(error => {
                 console.log(error.message);

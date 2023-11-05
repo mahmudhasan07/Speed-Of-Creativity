@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { Context } from "../ContextAPI/ContextAPI";
 import useAxios, { AxiosSource } from "../Axios/useAxios";
 
@@ -8,6 +8,7 @@ const AssignmentInfo = () => {
     const loader = useLoaderData()
     const { user } = useContext(Context)
     const axiosLink = useAxios(AxiosSource)
+    const navigate = useNavigate()
     const [similar, setsimilar] = useState([])
     // console.log(loader);
 
@@ -22,6 +23,9 @@ const AssignmentInfo = () => {
     }, [axiosLink, loader.level])
 
     // console.log(similar);
+    const handleassignment =(id)=>{
+    navigate(`/submit-assignment/${id}:`)
+    }
 
     return (
         <section className="lg:my-10 my-5">
@@ -34,7 +38,7 @@ const AssignmentInfo = () => {
                     <p className="my-1 text-lg"><span className="text-xl  font-semibold">Date: </span>{loader.date}</p>
                     {/* <p><span className="text-lg font-semibxld">Date: </span>{loader.email}</p> */}
                     <div className="flex lg:my-5 my-2  gap-5">
-                        <button className={user?.email !== loader.email ? "btn  bg-blue-700 text-white" : "btn btn-disabled"}>Take Assignment</button>
+                        <button onClick={()=>handleassignment(loader._id)} className={user?.email !== loader.email ? "btn  bg-blue-700 text-white" : "btn btn-disabled"}>Take Assignment</button>
                         <button className={user?.email == loader.email ? "btn  bg-blue-700 text-white" : "btn btn-disabled"}>Delete Assignment</button>
                     </div>
                 </div>
@@ -45,7 +49,7 @@ const AssignmentInfo = () => {
                 <p className="text-lg my-2">{loader.note}</p>
             </div>
 
-            <div className="lg:my-10 my-5 ">
+            <div className="lg:my-10 my-5 lg:mx-10 mx-2">
                 <h1 className="text-3xl font-bold my-2">Similar Level Assignment for you</h1>
                 <div className="my-3 flex flex-wrap gap-5">
                 {

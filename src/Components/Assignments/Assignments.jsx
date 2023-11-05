@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import { Context } from "../ContextAPI/ContextAPI";
+import Swal from "sweetalert2";
 
 
 const Assignments = () => {
     const loader = useLoaderData()
+    const {user}= useContext(Context)
     const [array, setarray] = useState([])
     const [array1, setarray1] = useState([])
     const [perpageitem, setperpageitem] = useState(6)
@@ -137,7 +140,23 @@ const Assignments = () => {
 };
 
 const Card = ({ card }) => {
+    const {user} = useContext(Context)
     const navigate = useNavigate()
+    const handleupdate=(email)=>{
+        console.log(user.email);
+        if(user.email == email){
+            navigate(`/assignment/update/${card._id}`)
+        }
+        else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "You are not create this Assignment, So you can't update this assignment",
+                footer: '<a href="">Why do I have this issue?</a>'
+              })
+        }
+
+    }
     const { level, marks } = card
     return (
         <div className="w-96 border-2 border-blue-700 p-2 mx-auto rounded-lg">
@@ -151,7 +170,7 @@ const Card = ({ card }) => {
             </div>
             <div className="flex justify-around">
                 <button onClick={() => navigate(`/assignment/info/${card.title}`)} className="btn bg-blue-600 text-white">View Assignment</button>
-                <button onClick={() => navigate(`/assignment/update/${card._id}`)} className="btn bg-blue-600 text-white">Update Assignment</button>
+                <button onClick={() => handleupdate(card.email)} className="btn bg-blue-600 text-white">Update Assignment</button>
             </div>
         </div>
     )

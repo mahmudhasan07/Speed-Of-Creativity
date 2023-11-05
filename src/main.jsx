@@ -45,13 +45,16 @@ const router = createBrowserRouter([
       },
       {
         path: '/assignment/info/:title',
-        element: <AssignmentInfo></AssignmentInfo>,
+        element: <Privetrouter><AssignmentInfo></AssignmentInfo></Privetrouter>,
         loader: ({ params }) => fetch(`http://localhost:5000/items/info/${params.title}`)
       },
       {
         path: '/assignment/update/:id',
         element: <UpdateInfo></UpdateInfo>,
         loader: ({ params }) => fetch(`http://localhost:5000/items/update/${params.id}`)
+      },
+      {
+        path : "submit-assignment"
       },
       {
         path: '/login',
