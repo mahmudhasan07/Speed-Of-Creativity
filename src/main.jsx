@@ -18,6 +18,7 @@ import Home from './Components/Home/Home.jsx';
 import AssignmentInfo from './Components/Assignments/AssignmentInfo.jsx';
 import UpdateInfo from './Components/Assignments/UpdateInfo.jsx';
 import Privetrouter from './Components/Router/Privetrouter.jsx';
+import Takeassignment from './Components/Takeassignment/Takeassignment.jsx';
 
 const router = createBrowserRouter([
   {
@@ -54,7 +55,9 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(`http://localhost:5000/items/update/${params.id}`)
       },
       {
-        path : "submit-assignment"
+        path : "/submit-assignment/:id",
+        element : <Takeassignment></Takeassignment>,
+        loader : ({params})=> fetch(`http://localhost:5000/items/${params.id}`)
       },
       {
         path: '/login',

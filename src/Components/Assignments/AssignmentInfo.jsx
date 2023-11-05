@@ -24,7 +24,7 @@ const AssignmentInfo = () => {
 
     // console.log(similar);
     const handleassignment =(id)=>{
-    navigate(`/submit-assignment/${id}:`)
+    navigate(`/submit-assignment/${id}`)
     }
 
     return (

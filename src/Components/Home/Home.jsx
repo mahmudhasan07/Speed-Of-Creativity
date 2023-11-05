@@ -2,9 +2,9 @@ import Features from "../Features/Features";
 import Qus from "./Qus";
 import Lottie from "lottie-react";
 import animation from "../../../public/Animation.json"
-import animation2 from "../../../public/Animation 2.json"
-import animation3 from "../../../public/Animation  3.json"
-import animation4 from "../../../public/Animation 4.json"
+import animation2 from "../../../public/Animation2.json"
+import animation3 from "../../../public/Animation3.json"
+import animation4 from "../../../public/Animation4.json"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
