@@ -8,7 +8,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 const NavBar = () => {
     const {user, logOut} = useContext(Context)
-    console.log(user);
+    // console.log(user);
     const search = useRef()
 
     const navigate = useNavigate()

@@ -26,7 +26,7 @@ const email = user?.email
         axiosLink.post('/items', items)
         .then(res=>{
             // console.log(res.data);
-            Swal.fire('SweetAlert2 is working!')
+            Swal.fire('Successfully Add Your Assignment')
         })
         .catch(error=>{
             console.log(error);

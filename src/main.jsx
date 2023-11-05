@@ -16,6 +16,7 @@ import ContextAPI from './Components/ContextAPI/ContextAPI.jsx';
 import Assignments from './Components/Assignments/Assignments.jsx';
 import Home from './Components/Home/Home.jsx';
 import AssignmentInfo from './Components/Assignments/AssignmentInfo.jsx';
+import UpdateInfo from './Components/Assignments/UpdateInfo.jsx';
 
 const router = createBrowserRouter([
   {
@@ -39,12 +40,12 @@ const router = createBrowserRouter([
       {
         path :'/assignment/info/:title',
         element : <AssignmentInfo></AssignmentInfo>,
-        loader : async()=> await fetch(``)
+        loader : ({params})=>  fetch(`http://localhost:5000/items/info/${params.title}`)
       },
       {
         path :'/assignment/update/:id',
-        element : <AssignmentInfo></AssignmentInfo>,
-        loader : async()=> await fetch(``)
+        element : <UpdateInfo></UpdateInfo>,
+        loader : ({params})=>  fetch(`http://localhost:5000/items/update/${params.id}`)
       },
       {
         path: '/login',

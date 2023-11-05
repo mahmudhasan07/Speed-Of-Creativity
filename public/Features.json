@@ -1,0 +1,42 @@
+[
+      {
+        "feature_name": "Clear Assignment Instructions",
+        "description": "Precise and concise task instructions to ensure student comprehension. These instructions should outline the assignment's objectives, scope, and requirements in a straightforward manner."
+      },
+      {
+        "feature_name": "Submission Deadline",
+        "description": "A specified due date for assignment submission to manage timelines. Meeting deadlines is crucial for time management and ensuring students complete their work on schedule."
+      },
+      {
+        "feature_name": "Version Control",
+        "description": "Encourage the use of version control systems like Git. This ensures code management, collaboration, and the ability to track changes and history effectively."
+      },
+      {
+        "feature_name": "Plagiarism Check",
+        "description": "Implement tools to prevent plagiarism by comparing students' work to existing sources. This maintains academic integrity and ensures originality in assignments."
+      },
+      {
+        "feature_name": "Code Quality Evaluation",
+        "description": "Assess code quality based on factors like readability, maintainability, and adherence to coding standards. High-quality code is essential for software development."
+      },
+      {
+        "feature_name": "Grading Rubric",
+        "description": "Provide a grading rubric outlining the criteria for evaluating assignments. It offers transparency in grading and helps students understand what's expected."
+      },
+      {
+        "feature_name": "Feedback and Revisions",
+        "description": "Offer constructive feedback to students and allow them to make revisions for improvement. Feedback aids learning, and revisions promote skill development."
+      },
+      {
+        "feature_name": "Accessibility and Inclusivity",
+        "description": "Consider diverse student needs, including accessibility. Ensure that assignments are accessible to all students, accommodating any disabilities or differences in learning styles."
+      },
+      {
+        "feature_name": "Code Documentation",
+        "description": "Encourage code documentation for clarity and maintainability. Well-documented code aids in understanding and maintaining projects over time."
+      },
+      {
+        "feature_name": "Support Resources",
+        "description": "Offer references and resources to assist students in completing the assignment. Providing access to relevant materials supports students in their learning journey."
+      }
+    ]  
