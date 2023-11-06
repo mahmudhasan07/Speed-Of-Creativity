@@ -47,6 +47,7 @@ const AssignmentInfo = () => {
                     text: "Your file has been deleted.",
                     icon: "success"
                 });
+                navigate('/assignments')
             }
         });
 
