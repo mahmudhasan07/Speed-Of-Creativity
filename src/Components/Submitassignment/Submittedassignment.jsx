@@ -42,7 +42,7 @@ const Card = ({ card }) => {
     }
 
     return (
-        <div className="flex flex-wrap justify-around gap-5 border-2 rounded-xl lg:mx-10 mx-3">
+        <div className="flex flex-wrap justify-around gap-5 p-2 border-2 rounded-xl lg:mx-10 mx-3">
             <img className="w-52" src={card.image} alt="" />
             <div className="my-auto">
                 <h1 className="text-xl font-semibold">{card.title}</h1>

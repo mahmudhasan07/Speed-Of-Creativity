@@ -21,6 +21,7 @@ import Privetrouter from './Components/Router/Privetrouter.jsx';
 import Takeassignment from './Components/Takeassignment/Takeassignment.jsx';
 import Submittedassignment from './Components/Submitassignment/Submittedassignment.jsx';
 import GivenMarks from './Components/GiverMarks/GivenMarks.jsx';
+import MyAssignment from './Components/MyAssignment/MyAssignment.jsx';
 
 const router = createBrowserRouter([
   {
@@ -42,8 +43,13 @@ const router = createBrowserRouter([
         loader: async () => await fetch('http://localhost:5000/items')
       },
       {
-        path : '/search/:text',
-        element : <Assignments></Assignments>,
+        path: '/my-assignment',
+        element : <MyAssignment></MyAssignment>,
+        loader : ()=> fetch(`http://localhost:5000/submitted-assignment`)
+      },
+      {
+        path: '/search/:text',
+        element: <Assignments></Assignments>,
         loader: async () => await fetch('http://localhost:5000/items')
       },
       {
@@ -57,19 +63,19 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(`http://localhost:5000/items/update/${params.id}`)
       },
       {
-        path : "/submit-assignment/:id",
-        element : <Privetrouter><Takeassignment></Takeassignment></Privetrouter>,
-        loader : ({params})=> fetch(`http://localhost:5000/items/${params.id}`)
+        path: "/submit-assignment/:id",
+        element: <Privetrouter><Takeassignment></Takeassignment></Privetrouter>,
+        loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`)
       },
       {
-        path :"/submitted",
-        element : <Privetrouter><Submittedassignment></Submittedassignment></Privetrouter>,
-        loader : ()=> fetch('http://localhost:5000/submitted-assignment')
+        path: "/submitted",
+        element: <Privetrouter><Submittedassignment></Submittedassignment></Privetrouter>,
+        loader: () => fetch('http://localhost:5000/submitted-assignment')
       },
       {
-        path : `/given-marks/:id`,
-        element : <GivenMarks></GivenMarks>,
-        loader : ({params})=> fetch(`http://localhost:5000/submitted-assignment/${params.id}`)
+        path: `/given-marks/:id`,
+        element: <GivenMarks></GivenMarks>,
+        loader: ({ params }) => fetch(`http://localhost:5000/submitted-assignment/${params.id}`)
       },
       {
         path: '/login',

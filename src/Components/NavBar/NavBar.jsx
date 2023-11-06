@@ -26,7 +26,7 @@ const NavBar = () => {
             <NavLink className={` my-auto`} to={`/`}><li className="">Home</li></NavLink>
             <NavLink to={`/assignments`}><li><span>All</span> <br /> Assignments</li></NavLink>
             <NavLink to={`/add-assignment`}><li>Create <br /> Assignment</li></NavLink>
-            <NavLink to={`/my-submitted`}><li>My <br /> Assignment</li></NavLink>
+            <NavLink to={`/my-assignment`}><li>My <br /> Assignment</li></NavLink>
             <NavLink to={`/submitted`}><li>Submitted <br /> Assignment</li></NavLink>
             {/* <NavLink to={`/contact`}><li>Contact Us</li></NavLink> */}
         </>
@@ -48,7 +48,7 @@ const NavBar = () => {
                             <hr />
                             <NavLink to={`/add-assignment`}><li className="my-1 font-semibold">Create  Assignment</li></NavLink>
                             <hr />
-                            <NavLink to={``}><li className="my-1 font-semibold">My Assignment</li></NavLink>
+                            <NavLink to={`/my-assignment`}><li className="my-1 font-semibold">My Assignment</li></NavLink>
                             <hr />
                             <NavLink to={`/submitted`}><li className="my-1 font-semibold">Submitted Assignment</li></NavLink>
                         </ul>
