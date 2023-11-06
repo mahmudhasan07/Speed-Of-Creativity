@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import { Context } from "../ContextAPI/ContextAPI";
 import Swal from 'sweetalert2'
 import useAxios from "../Axios/useAxios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Registration = () => {
     const { createUser, logOut, updateUser } = useContext(Context)
@@ -10,7 +12,7 @@ const Registration = () => {
     const [photo, setphoto] = useState('')
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
-// const axiosLink = useAxios()
+    // const axiosLink = useAxios()
 
     const handlereg = e => {
         e.preventDefault()
@@ -24,14 +26,25 @@ const Registration = () => {
         createUser(email, password)
             .then(res => {
                 console.log(res);
-                updateUser(name,photo)
+                updateUser(name, photo)
                     .then(res => {
                         console.log(res)
                         logOut()
                         Swal.fire('Successfully Registration')
                     })
                     .catch(error => {
-                        console.log(error.message);
+                        // console.log(error.message);
+                        toast.warn('🦄 Password must be 6 character', {
+                            position: "top-right",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "dark",
+                        });
+
                     })
 
             })
@@ -41,7 +54,7 @@ const Registration = () => {
 
     }
     return (
-        <section style={{backgroundImage : "url(https://i.ibb.co/GCgCjqZ/registration.jpg)", backgroundRepeat : "no-repeat" , backgroundPosition : "center"}}>
+        <section style={{ backgroundImage: "url(https://i.ibb.co/GCgCjqZ/registration.jpg)", backgroundRepeat: "no-repeat", backgroundPosition: "center" }}>
             <div className=" min-h-screen bg-opacity-20 bg-black text-white">
                 <div className=" lg:py-5 py-3 mb-1 bg-transparent backdrop-blur-lg backdrop:bg-blue-600   w-1/3 mx-auto">
                     <div className=" card  w-full p-3 border-4 shadow-2xl">

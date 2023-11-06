@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Context } from "../ContextAPI/ContextAPI";
 import { FcGoogle } from 'react-icons/fc';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -26,7 +28,17 @@ const Login = () => {
                 location.state ? navigate(`/${location.state}`) : navigate('/')
             })
             .catch(error => {
-                console.log(error.message);
+                // console.log(error.message);
+                toast.warn('🦄 Please check your email and password again', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    });
             })
 
     }
