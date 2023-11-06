@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Context } from "../ContextAPI/ContextAPI";
+import { FcGoogle } from 'react-icons/fc';
+
 
 
 const Login = () => {
@@ -60,8 +62,8 @@ const Login = () => {
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn bg-blue-600 text-white">Login</button>
-                                <hr />
-                                <button className="btn btn-sm">Google Log In</button>
+                                <hr className="my-4 border-2" />
+                                <button onClick={()=> googlelogin()} className="btn btn-sm"><FcGoogle></FcGoogle> Google Log In</button>
                             </div>
                         </form>
                     </div>
