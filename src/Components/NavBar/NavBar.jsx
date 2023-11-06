@@ -26,7 +26,7 @@ const NavBar = () => {
             <NavLink className={` my-auto`} to={`/`}><li className="">Home</li></NavLink>
             <NavLink to={`/assignments`}><li><span>All</span> <br /> Assignments</li></NavLink>
             <NavLink to={`/add-assignment`}><li>Create <br /> Assignment</li></NavLink>
-            <NavLink to={`/submitted`}><li>My <br /> Assignment</li></NavLink>
+            <NavLink to={`/my-submitted`}><li>My <br /> Assignment</li></NavLink>
             <NavLink to={`/submitted`}><li>Submitted <br /> Assignment</li></NavLink>
             {/* <NavLink to={`/contact`}><li>Contact Us</li></NavLink> */}
         </>
@@ -88,7 +88,7 @@ const NavBar = () => {
                 }
             </div>
             <div className="my-auto">
-                <input ref={search} className="border-2 rounded-lg text-black p-1" type="text" />
+                <input ref={search} placeholder="Enter your search topic" className="border-2 rounded-lg text-black p-1" type="text" />
                 <button onClick={handlesearch} className="btn btn-sm"><AiOutlineSearch></AiOutlineSearch></button>
             </div>
 

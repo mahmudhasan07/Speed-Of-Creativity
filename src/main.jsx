@@ -19,7 +19,8 @@ import AssignmentInfo from './Components/Assignments/AssignmentInfo.jsx';
 import UpdateInfo from './Components/Assignments/UpdateInfo.jsx';
 import Privetrouter from './Components/Router/Privetrouter.jsx';
 import Takeassignment from './Components/Takeassignment/Takeassignment.jsx';
-import Submitassignment from './Components/Submitassignment/Submitassignment.jsx';
+import Submittedassignment from './Components/Submitassignment/Submittedassignment.jsx';
+import GivenMarks from './Components/GiverMarks/GivenMarks.jsx';
 
 const router = createBrowserRouter([
   {
@@ -52,18 +53,23 @@ const router = createBrowserRouter([
       },
       {
         path: '/assignment/update/:id',
-        element: <UpdateInfo></UpdateInfo>,
+        element: <Privetrouter><UpdateInfo></UpdateInfo></Privetrouter>,
         loader: ({ params }) => fetch(`http://localhost:5000/items/update/${params.id}`)
       },
       {
         path : "/submit-assignment/:id",
-        element : <Takeassignment></Takeassignment>,
+        element : <Privetrouter><Takeassignment></Takeassignment></Privetrouter>,
         loader : ({params})=> fetch(`http://localhost:5000/items/${params.id}`)
       },
       {
         path :"/submitted",
-        element : <Submitassignment></Submitassignment>,
-        loader : ()=> fetch('http://localhost:5000/submit-assignment')
+        element : <Privetrouter><Submittedassignment></Submittedassignment></Privetrouter>,
+        loader : ()=> fetch('http://localhost:5000/submitted-assignment')
+      },
+      {
+        path : `/given-marks/:id`,
+        element : <GivenMarks></GivenMarks>,
+        loader : ({params})=> fetch(`http://localhost:5000/submitted-assignment/${params.id}`)
       },
       {
         path: '/login',

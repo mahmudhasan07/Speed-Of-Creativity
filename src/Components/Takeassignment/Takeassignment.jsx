@@ -12,6 +12,7 @@ const Takeassignment = () => {
     const title = loader.title
     const Givenemail = loader.email
     const mark = loader.marks
+    const image = loader.image
     const axiosLink = useAxios(AxiosSource)
 
     const handlesubmit=(e)=>{
@@ -20,8 +21,8 @@ const Takeassignment = () => {
         const assignmentLink = from.link.value
         const note = from.note.value
         console.log(title,Submitemail,Givenemail,assignmentLink,note);
-        const info = {title,Submitemail,Givenemail,assignmentLink,note,mark}
-        axiosLink.post(`/submit-assignment`,info)
+        const info = {title,image,Submitemail,Givenemail,assignmentLink,note,mark}
+        axiosLink.post(`/submitted-assignment`,info)
         .then(res=>{
             console.log(res.data);
             Swal.fire({
