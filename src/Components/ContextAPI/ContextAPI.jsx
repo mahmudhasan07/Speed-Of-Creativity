@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile, onAuthStateChanged } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import App from "../../App";
 import app from "../User/Login.config";
 import useAxios, { AxiosSource } from "../Axios/useAxios";
@@ -10,6 +10,7 @@ const ContextAPI = ({ children }) => {
     const [loading, setloading] = useState(true)
     const [user, setuser] = useState()
     const auth = getAuth(app)
+    const  Provider = new GoogleAuthProvider()
     const createUser = (email, password) => {
         setloading(true)
         return createUserWithEmailAndPassword(auth, email, password)
@@ -24,6 +25,10 @@ const ContextAPI = ({ children }) => {
     const logOut = () => {
         setloading(true)
         return signOut(auth)
+    }
+
+    const googlelogin =()=>{
+        return signInWithPopup(auth,Provider)
     }
 
     const updateUser = (name, photourl) => {
@@ -53,7 +58,7 @@ const ContextAPI = ({ children }) => {
     }, [auth, axiosLink])
 
 
-    const data = { createUser, signUser, logOut, updateUser, user, loading }
+    const data = { createUser, signUser, logOut, updateUser, user, loading, googlelogin }
     return (
         <Context.Provider value={data}>
             {children}

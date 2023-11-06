@@ -4,7 +4,7 @@ import { Context } from "../ContextAPI/ContextAPI";
 
 
 const Login = () => {
-    const { signUser } = useContext(Context)
+    const { signUser, googlelogin } = useContext(Context)
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
     const location = useLocation()
@@ -60,6 +60,8 @@ const Login = () => {
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn bg-blue-600 text-white">Login</button>
+                                <hr />
+                                <button className="btn btn-sm">Google Log In</button>
                             </div>
                         </form>
                     </div>
