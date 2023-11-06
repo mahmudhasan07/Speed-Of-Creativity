@@ -11,11 +11,12 @@ const Assignments = () => {
     const [array1, setarray1] = useState([])
     const [perpageitem, setperpageitem] = useState(6)
     const [currentpage, setcurrentpage] = useState(1)
-    const [lengths, setlengths] = useState(loader.length)
+    const [lengths, setlengths] = useState(loader?.length)
     const [start, setstart] = useState(0)
     const [end, setend] = useState(perpageitem)
     const id = useParams()
-    console.log(id.text);
+    // const navigate = useNavigate()
+    // console.log(id.text);
     useEffect(() => {
         if (id.text !== undefined) {
             const search = loader.filter(element => element.title.toLowerCase().includes(id.text))
@@ -25,14 +26,15 @@ const Assignments = () => {
             setlengths(search.length)
         }
         else {
+
             setarray(loader)
         }
     }, [id, loader])
     // console.log(lengths);
     const btn = Math.ceil(lengths / perpageitem)
 
-    const length = [...Array(btn).keys()]
-    console.log(length);
+    const Btnlength = [...Array(btn).keys()]
+    // console.log(length);
 
     const handlesort = e => {
         e.preventDefault()
@@ -96,11 +98,14 @@ const Assignments = () => {
 
     const handlebtn = (i) => {
         setcurrentpage(i + 1)
+        // navigate(`/assignments/page/${i+1}`)
+        
         setstart(i * perpageitem)
         setend(i * perpageitem + perpageitem)
 
     }
-    console.log(start, end);
+    // console.log(start, end);
+    console.log(lengths);
     return (
         <section>
             <h1 className="text-3xl text-center my-5">All Assignments</h1>
@@ -122,14 +127,16 @@ const Assignments = () => {
                             <option value="hard">Hard</option>
                         </select>
                     </div>
-                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 lg:my-10 my-5  border-2">
+                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 lg:my-10 my-5">
                         {
-                            array.slice(start, end).map(element => <Card key={element._id} card={element}></Card>)
+                         lengths !== 0 ? array.slice(start, end).map(element => <Card key={element._id} card={element}></Card>)
+                         :
+                         <h1 className="text-3xl text-center">No Data Found</h1>
                         }
                     </div>
                     <div className="text-center mb-5">
                         {
-                            length.map(i => <button onClick={() => handlebtn(i)} className={currentpage == (i + 1) ? "bg-blue-500 text-white btn mr-3" : "btn mr-3"} key={i}>{i + 1}</button>)
+                            Btnlength.map(i => <button onClick={() => handlebtn(i)} className={currentpage == (i + 1) ? "bg-blue-500 text-white btn mr-3" : "btn mr-3"} key={i}>{i + 1}</button>)
                         }
                     </div>
                 </div>

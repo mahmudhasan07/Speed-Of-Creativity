@@ -1,5 +1,8 @@
+import { useContext } from "react";
 import { useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { Context } from "../ContextAPI/ContextAPI";
+import Swal from "sweetalert2";
 
 const Submittedassignment = () => {
     const loader = useLoaderData()
@@ -18,12 +21,23 @@ const Submittedassignment = () => {
 };
 
 const Card = ({ card }) => {
-    const [task, settask] = useState('processing')
+    // const [task, settask] = useState('processing')
+    const {user} = useContext(Context)
     const navigate = useNavigate()
 
     const handlemark = (id) => {
-        navigate(`/given-marks/${id}`)
-        settask('Completed')
+        if(card.Givenemail == user.email){
+            navigate(`/given-marks/${id}`)
+        }
+        else{
+            Swal.fire({
+                icon: "error",
+                title: "Unauthorize",
+                text: "You don't have access to give marks on this assignment",
+                footer: '<a href="#">Why do I have this issue?</a>'
+              });
+        }
+        
 
     }
 
@@ -32,7 +46,7 @@ const Card = ({ card }) => {
             <img className="w-52" src={card.image} alt="" />
             <div className="my-auto">
                 <h1 className="text-xl font-semibold">{card.title}</h1>
-                <p><span className="font-semibold">Status :</span> <span>{task}</span></p>
+                <p><span className="font-semibold">Status :</span> <span>{card.status? card.status : "Processing"}</span></p>
             </div>
             <div className="my-auto">
                 <h1><span className="font-semibold">Submitted By: </span>{card.Submitemail}</h1>
@@ -40,7 +54,7 @@ const Card = ({ card }) => {
             </div>
             <div className="my-auto">
                 <h1><span className="font-semibold">Full Marks: </span> {card.mark}</h1>
-                <h1><span className="font-semibold">Get Mark: </span> {card?.Gmark}</h1>
+                <h1><span className="font-semibold">Get Mark: </span> {card?.Givenmarks}</h1>
             </div>
             <div className="my-auto">
                 <button onClick={() => handlemark(card._id)} className="btn bg-blue-600 text-white hover:text-black">Give Mark</button>
