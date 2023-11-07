@@ -34,7 +34,7 @@ const Registration = () => {
                     })
                     .catch(error => {
                         // console.log(error.message);
-                        toast.warn('🦄 Password must be 6 character', {
+                        toast.warn('Password must be 6 character', {
                             position: "top-right",
                             autoClose: 5000,
                             hideProgressBar: false,
@@ -56,7 +56,7 @@ const Registration = () => {
     return (
         <section style={{ backgroundImage: "url(https://i.ibb.co/GCgCjqZ/registration.jpg)", backgroundRepeat: "no-repeat", backgroundPosition: "center" }}>
             <div className=" min-h-screen bg-opacity-20 bg-black text-white">
-                <div className=" lg:py-5 py-3 mb-1 bg-transparent backdrop-blur-lg backdrop:bg-blue-600   w-1/3 mx-auto">
+                <div className=" lg:py-5 py-3 mb-1 bg-transparent backdrop-blur-lg backdrop:bg-blue-600   lg:w-1/3 mx-auto">
                     <div className=" card  w-full p-3 border-4 shadow-2xl">
                         <h1 className="text-4xl text-center font-bold ">Registration Now ..!</h1>
                         <hr className="mx-3 border-2 mt-5" />
@@ -97,6 +97,7 @@ const Registration = () => {
                         </form>
                     </div>
                 </div>
+                <ToastContainer></ToastContainer>
             </div>
         </section>
     );

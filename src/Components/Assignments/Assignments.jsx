@@ -19,7 +19,7 @@ const Assignments = () => {
     // console.log(id.text);
     useEffect(() => {
         if (id.text !== undefined) {
-            const search = loader.filter(element => element.title.toLowerCase().includes(id.text))
+            const search = loader.filter(element => element.title.toLowerCase().includes(id.text.toLowerCase()))
             console.log(search);
             setarray(search)
             setarray1(search)

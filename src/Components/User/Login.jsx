@@ -29,7 +29,7 @@ const Login = () => {
             })
             .catch(error => {
                 // console.log(error.message);
-                toast.warn('🦄 Please check your email and password again', {
+                toast.warn('Please check your email and password again', {
                     position: "top-right",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -38,19 +38,15 @@ const Login = () => {
                     draggable: true,
                     progress: undefined,
                     theme: "dark",
-                    });
+                });
             })
 
     }
     return (
-        <section style={{backgroundImage : "url(https://i.ibb.co/djgLvpv/login.png)", backgroundRepeat : "no-repeat" , backgroundPosition : "center"}}>
-            <div  className=" min-h-screen hero hero-overlay bg-opacity-30 text-white">
-                <div className=" my-auto  w-1/3 mx-auto ">
-                    {/* <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    </div> */}
-                    <div className=" card   w-full p-3 bg-transparent backdrop-blur-lg shadow-2xl">
+        <section style={{ backgroundImage: "url(https://i.ibb.co/djgLvpv/login.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center" }}>
+            <div className=" min-h-screen hero  bg-opacity-30 text-white">
+                <div className=" my-auto hero-overlay  lg:w-1/3 bg-transparent backdrop-blur-lg mx-auto ">
+                    <div className=" card w-full  p-3  border-4  shadow-2xl">
                         <h1 className="text-4xl text-center font-bold ">Log In </h1>
                         <hr className="mx-3 border-2 mt-5" />
                         <form onSubmit={handlelogin} className="card-body">
@@ -75,12 +71,13 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button className="btn bg-blue-600 text-white">Login</button>
                                 <hr className="my-4 border-2" />
-                                <button onClick={()=> googlelogin()} className="btn btn-sm"><FcGoogle></FcGoogle> Google Log In</button>
+                                <button onClick={() => googlelogin()} className="btn btn-sm"><FcGoogle></FcGoogle> Google Log In</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </section>
     );
 };

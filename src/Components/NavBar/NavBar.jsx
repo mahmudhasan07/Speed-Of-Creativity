@@ -88,7 +88,7 @@ const NavBar = () => {
                 }
             </div>
             <div className="my-auto">
-                <input ref={search} placeholder="Enter your search topic" className="border-2 rounded-lg text-black p-1" type="text" />
+                <input ref={search} placeholder="Enter your search topic" className="border-2 rounded-lg lg:w-48 w-40 text-black p-1" type="text" />
                 <button onClick={handlesearch} className="btn btn-sm"><AiOutlineSearch></AiOutlineSearch></button>
             </div>
 
