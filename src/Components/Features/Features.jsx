@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 const Features = () => {
     const [array, setarray] = useState([])
@@ -8,6 +9,7 @@ const Features = () => {
         fetch('Features.json')
             .then(response => response.json())
             .then(data => setarray(data))
+            AOS.init()
     }, [])
 
     return (
@@ -25,7 +27,7 @@ const Features = () => {
 
 const Card = ({ card }) => {
     return (
-        <div className="w-96 border-2 border-blue-600 text-center p-2 rounded-lg">
+        <div data-aos="fade-up" className="w-96 border-2 border-blue-600 text-center p-2 rounded-lg">
             <h1 className="lg:text-2xl text-lg font-bold ">{card.feature_name}</h1>
             <hr className="border-2 my-2 mx-5 rounded-xl border-blue-600" />
             <p className="lg:text-lg text-base">{card.description}</p>

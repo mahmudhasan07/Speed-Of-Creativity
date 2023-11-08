@@ -11,12 +11,18 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Comment from "../Comment/Comment";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+import { useEffect } from "react";
 
 
 const Home = () => {
+    useEffect(()=>{
+        AOS.init()
+    },[])
     return (
         <section>
-            <div className=" lg:mx-10 my-5 ">
+            <div  className=" lg:mx-10 my-5 ">
                 <Swiper
                     // install Swiper modules
                     modules={[Navigation, EffectCoverflow, Pagination, Autoplay, Scrollbar, A11y]}

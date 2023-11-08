@@ -2,6 +2,8 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { Context } from "../ContextAPI/ContextAPI";
 import useAxios, { AxiosSource } from "../Axios/useAxios";
 import Swal from "sweetalert2";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 
 const Comment = () => {
@@ -58,16 +60,17 @@ const Comment = () => {
             .catch(error => {
                 console.log(error.status);
             })
+            AOS.init()
     }, [axiosLink])
     return (
         <section className="lg:my-16 my-6">
             <h1 className="text-3xl text-center font-bold my-5">FeedBack Section</h1>
             <div className="flex justify-around flex-wrap" >
-                <div className=" p-2">
+                <div data-aos="fade-right" className=" mx-10 p-2">
                     <textarea placeholder="Enter Your Comment" ref={review} className="border-2 border-blue-500 rounded-xl w-96 h-72 p-2" name="comment" id=""></textarea> <br />
                     <button onClick={handlecomment} className="btn bg-blue-600 text-white hover:text-black">Comment</button>
                 </div>
-                <div className="h-96 border-2 border-gray-400 overflow-x-auto grid grid-cols-2 gap-2">
+                <div data-aos="fade-left" className="h-96 border-2 border-gray-400 overflow-x-auto grid lg:grid-cols-2 grid-cols-1 gap-2">
                     {
                         items?.map(element => <Card key={element._id} card={element}></Card>)
                     }

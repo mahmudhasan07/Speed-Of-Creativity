@@ -1,8 +1,10 @@
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Context } from "../ContextAPI/ContextAPI";
 import { AiOutlineSearch } from "react-icons/ai";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 
 
@@ -30,17 +32,21 @@ const NavBar = () => {
             <NavLink to={`/submitted`}><li>Submitted <br /> Assignment</li></NavLink>
             {/* <NavLink to={`/contact`}><li>Contact Us</li></NavLink> */}
         </>
+
+        useEffect(()=>{
+            AOS.init()
+        },[])
     return (
         <section className="flex flex-wrap justify-around border-2 bg-blue-600 text-white border-black py-4">
             <div>
-                <div className="hs-dropdown relative mr-2 inline-flex lg:hidden ">
+                <div  className="hs-dropdown relative mr-2 inline-flex lg:hidden ">
                     <button id="hs-dropdown-default" type="button" className=" hs-dropdown-toggle py-3 px-4 inline-flex justify-center text-white text-2xl border-2  btn-sm items-center gap-2 rounded-md  mt-3 font-medium ">
                         <AiOutlineMenuUnfold></AiOutlineMenuUnfold>
 
                     </button>
 
-                    <div className="hs-dropdown-menu text-center w-full backdrop-blur-xl backdrop:bg-gray-7000 bg-transparent transition-[opacity,margin] duration-[0.1ms] hs-dropdown-open:opacity-100 opacity-0  hidden z-10 mt-2 min-w-[15rem]  shadow-md rounded-lg p-2" aria-labelledby="hs-dropdown-default">
-                        <ul className="text-black">
+                    <div   className="hs-dropdown-menu text-center w-full backdrop-blur-xl backdrop:bg-gray-7000 bg-transparent transition-[opacity,margin] duration-[0.1ms] hs-dropdown-open:opacity-100 opacity-0  hidden z-10 mt-2 min-w-[15rem]  shadow-md rounded-lg p-2" aria-labelledby="hs-dropdown-default">
+                        <ul  className="text-black">
 
                             <NavLink to={`/`}><li className="my-1 font-semibold">Home</li></NavLink>
                             <hr className="border-gray-500" />

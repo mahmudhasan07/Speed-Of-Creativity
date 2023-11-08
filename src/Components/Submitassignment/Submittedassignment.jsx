@@ -4,6 +4,8 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { Context } from "../ContextAPI/ContextAPI";
 import Swal from "sweetalert2";
 import useAxios, { AxiosSource } from "../Axios/useAxios";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 const Submittedassignment = () => {
     const { user } = useContext(Context)
@@ -17,6 +19,7 @@ const Submittedassignment = () => {
             .then(res => {
                 setitmes(res.data)
             })
+            AOS.init()
     }, [axiosLink, setitmes])
 
     console.log(items.length);
@@ -90,7 +93,7 @@ const Card = ({ card }) => {
     }
 
     return (
-        <div className="flex flex-wrap justify-around gap-5 p-2 border-2 rounded-xl lg:mx-10 mx-3">
+        <div data-aos="fade-up" className="flex flex-wrap justify-around gap-5 p-3 border-2 shadow-xl rounded-xl lg:mx-10 mx-3">
             <img className="w-52" src={card.image} alt="" />
             <div className="my-auto">
                 <h1 className="text-xl font-semibold">{card.title}</h1>

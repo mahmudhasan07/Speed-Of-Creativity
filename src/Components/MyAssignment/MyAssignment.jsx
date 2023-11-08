@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../ContextAPI/ContextAPI';
 import useAxios, { AxiosSource } from '../Axios/useAxios';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 const MyAssignment = () => {
     const { user } = useContext(Context)
@@ -17,6 +19,7 @@ const MyAssignment = () => {
                 console.log(res.data);
                 setitmes(res.data)
             })
+            AOS.init()
     }, [axiosLink, user.email])
 
     useEffect(() => {
@@ -41,7 +44,7 @@ const MyAssignment = () => {
 
 const Card = ({ card }) => {
     return (
-        <div className="flex flex-wrap justify-around gap-5 border-2 p-2 rounded-xl lg:mx-10 mx-3">
+        <div data-aos="fade-up" className="flex flex-wrap justify-around gap-5 border-2 p-2 rounded-xl lg:mx-10 mx-3">
             <img className="w-52" src={card.image} alt="" />
             <div className="my-auto">
                 <h1 className="text-xl font-semibold">{card.title}</h1>

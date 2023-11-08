@@ -3,6 +3,8 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { Context } from "../ContextAPI/ContextAPI";
 import useAxios, { AxiosSource } from "../Axios/useAxios";
 import Swal from "sweetalert2";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 
 const AssignmentInfo = () => {
@@ -20,6 +22,7 @@ const AssignmentInfo = () => {
                 const item = res.data.filter(element => element.level == loader.level)
                 // console.log(item);
                 setsimilar(item)
+                AOS.init()
             })
     }, [axiosLink, loader.level])
 
@@ -90,7 +93,7 @@ const AssignmentInfo = () => {
 
 const Card = ({ card }) => {
     return (
-        <div className="border-2 w-56 rounded-xl p-2">
+        <div data-aos="fade-right" className="border-2 w-56 rounded-xl p-2">
             <img className="w-48" src={card.image} alt="" />
             <div>
                 <h1>{card.title}</h1>
