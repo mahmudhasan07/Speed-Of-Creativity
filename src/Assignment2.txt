@@ -1,0 +1,300 @@
+[
+    {
+      "title": "Python Web Scraping",
+      "note": "Scrape data from a website and store it in a CSV file. This assignment will test your ability to use Python's web scraping libraries, such as BeautifulSoup and requests. You will be required to navigate web pages, extract relevant data, and write it to a CSV file for analysis. This project helps you develop practical skills for data collection and processing.",
+      "date": "2023-01-15",
+      "marks": 85,
+      "image": "https://i.ibb.co/xmHkLhJ/Python-Web-Scraping.png",
+      "level": "medium",
+      "email": "mahmudhasan.hb@gmail.com"
+    },
+    {
+      "title": "Java Swing Application",
+      "note": "Create a GUI application using Java Swing for a simple calculator. In this assignment, you'll demonstrate your proficiency in Java Swing, a graphical user interface toolkit for Java. You are required to design and implement a calculator with a user-friendly interface. Focus on providing standard mathematical operations like addition, subtraction, multiplication, and division. You'll need to handle user input, perform calculations, and display results accurately.",
+      "date": "2023-02-05",
+      "marks": 90,
+      "image": "https://i.ibb.co/R6SFNXy/Java-Swing.png",
+      "level": "hard",
+      "email": "mahmudhasan.hb@gmail.com"
+    },
+    {
+      "title": "C++ Data Structures",
+      "note": "Implement various data structures like linked lists and stacks in C++. This assignment challenges your knowledge of fundamental data structures in C++. You will create and test implementations of data structures such as singly linked lists, stacks, and queues. Your code should handle insertion, deletion, and traversal operations efficiently. Understanding the principles of memory management and pointers is crucial for this project.",
+      "date": "2023-02-20",
+      "marks": 70,
+      "image": "https://i.ibb.co/h2LLh6Q/C-Data-Structures.jpg",
+      "level": "hard",
+      "email": "mahmudhasan.hb@gmail.com"
+    },
+    {
+      "title": "JavaScript Game Development",
+      "note": "Create a basic 2D game using HTML5 canvas and JavaScript. This assignment will test your skills in game development using web technologies. You are tasked with building a simple 2D game that runs in a web browser. Utilize HTML5 canvas for graphics and JavaScript for game logic. Your game should include features like player controls, scoring, and collision detection. Pay attention to user experience and game performance.",
+      "date": "2023-03-10",
+      "marks": 90,
+      "image": "https://i.ibb.co/Rhswbsx/Java-Script-Game-Development.jpg",
+      "level": "medium",
+      "email": "mahmudhasan@gmail.com"
+    },
+    {
+      "title": "SQL Database Project",
+      "note": "Design and implement a relational database for a library system. In this assignment, you will demonstrate your expertise in database design and SQL programming. Your task is to create a relational database schema for a library system, including tables for books, patrons, transactions, and more. Implement SQL queries to retrieve and manipulate data efficiently. Consider data integrity and normalization in your design.",
+      "date": "2023-03-25",
+      "marks": 80,
+      "image": "https://i.ibb.co/ZzZLnn5/SQL-Database-Project.jpg",
+      "level": "easy",
+      "email": "mahmudhasan@gmail.com"
+    },
+    {
+      "title": "Ruby on Rails Blog",
+      "note": "Build a simple blog application using Ruby on Rails framework. This assignment focuses on web development using Ruby on Rails, a popular framework known for its simplicity and productivity. You will create a blog application with features like user authentication, article creation, and comments. Pay attention to the Model-View-Controller (MVC) architecture that Rails follows. Customize the layout and design to make your blog visually appealing.",
+      "date": "2023-04-05",
+      "marks": 90,
+      "image": "https://i.ibb.co/J3Z9jCn/Ruby-on-Rails-Blog.jpg",
+      "level": "hard",
+      "email": "mahmudhasan@outlook.com"
+    },
+    {
+      "title": "Android App Development",
+      "note": "Develop a mobile app for task management on Android platform. This assignment will test your skills in Android app development. You are required to create a task management app for Android devices. The app should allow users to add, edit, and organize tasks, set deadlines, and mark tasks as completed. Pay attention to the user interface, ensuring a smooth and intuitive user experience.",
+      "date": "2023-04-20",
+      "marks": 80,
+      "image": "https://i.ibb.co/wd2TndQ/Android-Developer-1.png",
+      "level": "easy",
+      "email": "mahmudhasan@outlook.com"
+    },
+    {
+      "title": "Machine Learning with Python",
+      "note": "Implement a machine learning model for sentiment analysis in Python. In this assignment, you'll dive into the field of machine learning and natural language processing. Your task is to build a sentiment analysis model using Python and appropriate libraries. You'll need to preprocess text data, train a machine learning algorithm, and evaluate its performance in sentiment classification. Pay attention to feature extraction, model selection, and evaluation metrics.",
+      "date": "2023-05-05",
+      "marks": 90,
+      "image": "https://i.ibb.co/WKtL9bT/Machine-Learning-with-Python.png",
+      "level": "medium",
+      "email": "mahmudhasan@outlook.com"
+    },
+    {
+      "title": "React.js Website",
+      "note": "Build a responsive website using React.js and CSS. In this assignment, you'll focus on web development using React.js, a popular JavaScript library for building user interfaces. Your task is to create a responsive website with React components. Pay attention to state management, component lifecycle, and styling with CSS. You can choose the website's theme and content, but ensure it's visually appealing and functional.",
+      "date": "2023-05-20",
+      "marks": 80,
+      "image": "https://i.ibb.co/LhjfXwf/React-js-Website.jpg",
+      "level": "easy",
+      "email": "mahmudhasan.hb@outlook.com"
+    },
+    {
+      "title": "C# Windows Forms App",
+      "note": "Create a Windows Forms application for a digital clock. This assignment will evaluate your skills in Windows Forms development using C#. Your task is to design and implement a digital clock application with a user-friendly interface. The clock should display the current time accurately.",
+      "date": "2023-06-05",
+      "marks": 90,
+      "image": "https://i.ibb.co/nCCWX6c/C-Windows-Forms-App.png",
+      "level": "hard",
+      "email": "mahmudhasan.hb@outlook.com"
+    },
+    {
+      "title": "Data Analysis with R",
+      "note": "Analyze a dataset using R for insights and visualization. In this assignment, you'll work with the R programming language to perform data analysis on a given dataset. Your tasks include data exploration, cleaning, visualization, and generating insights from the data. Utilize R's statistical and data visualization packages to accomplish these tasks.",
+      "date": "2023-06-20",
+      "marks": 80,
+      "image": "https://i.ibb.co/VTcp7p0/Data-Analysis-with-R.jpg",
+      "level": "easy",
+      "email": "mahmudhasan@gmail.com"
+    },
+    {
+      "title": "Node.js RESTful API",
+      "note": "Develop a RESTful API using Node.js and Express for a task management system. In this assignment, you'll build a RESTful API using Node.js and the Express.js framework. Your API should allow clients to perform operations on a task management system, such as creating, updating, and deleting tasks. Implement routing, request handling, and data validation.",
+      "date": "2023-07-05",
+      "marks": 95,
+      "image": "https://i.ibb.co/X4p87hK/Node-js-RESTful-API.png",
+      "level": "medium",
+      "email": "mahmudhasan@outlook.com"
+    },
+    {
+      "title": "JavaFX Inventory System",
+      "note": "Build an inventory management system with JavaFX and MySQL. This assignment focuses on desktop application development using JavaFX and database integration with MySQL. Your task is to create an inventory management system that allows users to add, view, and manage inventory items. Implement a user-friendly interface and database connectivity for data storage and retrieval.",
+      "date": "2023-07-20",
+      "marks": 80,
+      "image": "https://i.ibb.co/3h9FB7w/Java-FX-Inventory-System.png",
+      "level": "easy",
+      "email": "mahmudhasan@outlook.com"
+    },
+    {
+      "title": "Python Data Science Project",
+      "note": "Work on a data science project using Python. This assignment will challenge your data analysis and visualization skills in Python. You will be provided with a dataset and tasked with cleaning, exploring, and analyzing it. Your goal is to extract meaningful insights from the data and present your findings using data visualization libraries like Matplotlib and Seaborn.",
+      "date": "2023-08-05",
+      "marks": 90,
+      "image": "https://i.ibb.co/ZR9RMC2/Python-Data-Science-Project.jpg",
+      "level": "medium",
+      "email": "mahmudhasan@gmail.com"
+    },
+    {
+      "title": "Swift iOS App",
+      "note": "Develop a mobile app for iOS using Swift. This assignment will test your skills in iOS app development using Swift. Your task is to create a mobile app that serves a specific purpose. It could be a to-do list app, a weather app, a simple game, or any other app idea you have in mind. Focus on creating a smooth and intuitive user experience. This project will help you gain practical experience in mobile app development for iOS devices.",
+      "date": "2023-08-20",
+      "marks": 70,
+      "image": "https://i.ibb.co/xXzRfPT/Swift-i-OS-App.png",
+      "level": "hard",
+      "email": "mahmudhasan@outlook.com"
+    },
+    {
+      "title": "Java Multithreading",
+      "note": "Implement multithreading in Java for a simulation project. This assignment will assess your understanding of multithreading concepts in Java. You'll work on a simulation project where multiple threads need to be coordinated to simulate a specific scenario. Pay attention to thread synchronization and communication. This project will enhance your knowledge of concurrent programming in Java.",
+      "date": "2023-09-05",
+      "marks": 80,
+      "image": "https://i.ibb.co/SJWDc0W/Java-Multithreading.png",
+      "level": "easy",
+      "email": "mahmudhasan.hb@outlook.com"
+    },
+    {
+      "title": "Python Flask Web App",
+      "note": "Build a web application using Python Flask. In this assignment, you'll focus on web development using the Flask framework in Python. Your task is to create a web app with a specific functionality, such as a task manager, a blog, or a simple e-commerce site. Pay attention to routing, templates, and user interaction. This project will strengthen your skills in web development using Python.",
+      "date": "2023-09-20",
+      "marks": 90,
+      "image": "https://i.ibb.co/XsTzP58/Python-Flask-Web-App.png",
+      "level": "medium",
+      "email": "mahmudhasan.hb@outlook.com"
+    },
+    {
+      "title": "C Data Encryption",
+      "note": "Implement data encryption and decryption in C. This assignment will challenge your knowledge of cryptography and C programming. Your task is to create a program that can encrypt and decrypt data using a chosen encryption algorithm. Pay attention to key management and security practices. This project will enhance your understanding of data security and encryption techniques.",
+      "date": "2023-10-05",
+      "marks": 85,
+      "image": "https://i.ibb.co/rHnKcy4/C-Data-Encryption.jpg",
+      "level": "easy",
+      "email": "mahmudhasan.hb@outlook.com"
+    },
+    {
+      "title": "Vue.js Single Page App",
+      "note": "Create a single-page web application using Vue.js. In this assignment, you'll focus on frontend web development using the Vue.js framework. Your task is to build a single-page app (SPA) with dynamic content and interactions. Choose a project idea that showcases your Vue.js skills. Pay attention to component-based architecture and reactivity. This project will enhance your proficiency in Vue.js and modern frontend development.",
+      "date": "2023-10-20",
+      "marks": 90,
+      "image": "https://i.ibb.co/GsNC2sp/Vue-js-Single-Page-App.jpg",
+      "level": "hard",
+      "email": "mahmudhasan.hb@outlook.com"
+    },
+    {
+      "title": "Python Natural Language Processing",
+      "note": "Work on a natural language processing (NLP) project in Python. This assignment will challenge your NLP skills. You'll be provided with a text corpus and tasked with performing various NLP tasks, such as text classification, sentiment analysis, or named entity recognition. Utilize NLP libraries like NLTK or spaCy to accomplish these tasks. This project will enhance your understanding of NLP and text analysis.",
+      "date": "2023-11-05",
+      "marks": 90,
+      "image": "https://i.ibb.co/KjFpBGj/Python-Natural-Language-Processing.png",
+      "level": "medium",
+      "email": "mahmudhasan.hb@outlook.com"
+    },
+    {
+      "title": "C# Desktop Application",
+      "note": "Create a desktop application using C#. In this assignment, you'll focus on desktop application development using C#. Your task is to build a desktop application with a specific functionality. It could be a file manager, a calculator, or any other utility app. Pay attention to the user interface and usability. This project will enhance your skills in Windows desktop application development.",
+      "date": "2023-11-20",
+      "marks": 95,
+      "image": "https://i.ibb.co/Q9t89gN/C-Desktop-Application.jpg",
+      "level": "hard",
+      "email": "mahmudhasan.hb@outlook.com"
+    },
+    {
+      "title": "Java Microservices",
+      "note": "Develop microservices in Java for a distributed system. This assignment will challenge your understanding of microservices architecture. You'll work on a project where multiple microservices need to be designed, developed, and integrated to create a distributed system. Pay attention to communication protocols, load balancing, and fault tolerance. This project will enhance your knowledge of microservices and distributed systems.",
+      "date": "2023-12-05",
+      "marks": 70,
+      "image": "https://i.ibb.co/JQ90FRm/Java-Microservices.png",
+      "level": "easy",
+      "email": "mahmudhasan.hb@gamil.com"
+    },
+    {
+      "title": "Swift macOS App",
+      "note": "Create a desktop application for macOS using Swift. This assignment will test your skills in macOS app development using Swift. Your task is to build a desktop app for macOS with a specific functionality. Focus on creating a seamless user experience that aligns with macOS design principles. This project will provide hands-on experience in macOS app development.",
+      "date": "2023-12-20",
+      "marks": 75,
+      "image": "https://i.ibb.co/HN66f1L/Swift-mac-OS-App.png",
+      "level": "medium",
+      "email": "mahmudhasan.hb@outlook.com"
+    },
+    {
+        "title": "Python Data Visualization",
+        "note": "Create interactive data visualizations in Python. This assignment will challenge your data visualization skills using Python libraries such as Matplotlib, Plotly, or Seaborn. You'll be provided with a dataset and tasked with creating insightful and interactive visualizations. Pay attention to customizing plots, labels, and interactivity features. This project will enhance your ability to communicate data effectively.",
+        "date": "2024-01-05",
+        "marks": 80,
+        "image": "https://i.ibb.co/CmbCwNJ/Python-Data-Visualization.png",
+        "level": "medium",
+        "email": "mahmudhasan.hb@gamil.com"
+      },
+      {
+        "title": "Java Network Chat Application",
+        "note": "Develop a network-based chat application in Java. This assignment will test your knowledge of networking and Java socket programming. Your task is to create a chat application that allows users to exchange messages over a network. Pay attention to handling multiple clients, message encryption, and real-time communication. This project will strengthen your network programming skills.",
+        "date": "2024-01-20",
+        "marks": 95,
+        "image": "https://i.ibb.co/72frhFx/Java-Network-Chat-Application.jpg",
+        "level": "hard",
+        "email": "mahmudhasan.hb@gamil.com"
+      },
+      {
+        "title": "C++ Game Development",
+        "note": "Create a 2D game using C++. In this assignment, you'll focus on game development in C++. Your task is to design and implement a 2D game with features like character movement, collision detection, and scoring. Pay attention to game physics and user interaction. This project will enhance your game development skills in C++.",
+        "date": "2024-02-05",
+        "marks": 85,
+        "image": "https://i.ibb.co/72frhFx/Java-Network-Chat-Application.jpg",
+        "level": "medium",
+        "email": "mahmudhasan.hb@gamil.com"
+      },
+      {
+        "title": "Web Security Audit",
+        "note": "Conduct a web security audit for a website. This assignment will challenge your skills in web security. You'll be provided with a website to assess for vulnerabilities. Your task is to identify security weaknesses, such as cross-site scripting (XSS) or SQL injection, and provide recommendations for mitigation. Pay attention to ethical hacking practices and security best practices.",
+        "date": "2024-02-20",
+        "marks": 90,
+        "image": "https://i.ibb.co/RSWYgN6/Web-Security-Audit.jpg",
+        "level": "easy",
+        "email": "mahmudhasan.hb@gamil.com"
+      },
+      {
+        "title": "React Native Mobile App",
+        "note": "Develop a cross-platform mobile app using React Native. This assignment will test your skills in mobile app development with a single codebase. Your task is to create a mobile app that runs on both iOS and Android devices. Pay attention to component reuse, navigation, and platform-specific considerations. This project will enhance your cross-platform development skills.",
+        "date": "2024-03-05",
+        "marks": 85,
+        "image": "https://i.ibb.co/nPnY2GT/React-Native-Mobile-App.png",
+        "level": "medium",
+        "email": "mahmudhasan.hb@gamil.com"
+      },
+      {
+        "title": "Cryptography in Python",
+        "note": "Implement cryptographic algorithms in Python. This assignment will challenge your understanding of encryption and decryption techniques. You'll be tasked with implementing cryptographic algorithms, such as RSA or AES, in Python. Pay attention to key generation, encryption, and decryption processes. This project will enhance your knowledge of cryptography.",
+        "date": "2024-03-20",
+        "marks": 95,
+        "image": "https://i.ibb.co/p0Vxzdn/Cryptography-in-Python.jpg",
+        "level": "hard",
+        "email": "mahmudhasan@gamil.com"
+      },
+      {
+        "title": "Java Spring Boot REST API",
+        "note": "Create a RESTful API using Java Spring Boot. This assignment focuses on developing a RESTful API using the Spring Boot framework in Java. Your API should serve as a backend for a specific application, providing endpoints for data retrieval and manipulation. Pay attention to request handling, validation, and security. This project will strengthen your backend development skills.",
+        "date": "2024-04-05",
+        "marks": 90,
+        "image": "https://i.ibb.co/dKHvH5j/Java-Spring-Boot-REST-API.png",
+        "level": "medium",
+        "email": "mahmudhasan@gamil.com"
+      },
+      {
+        "title": "Android Material Design App",
+        "note": "Develop an Android app with Material Design principles. This assignment will test your ability to create a visually appealing and user-friendly Android app. Your task is to design and implement an app that follows Material Design guidelines. Pay attention to layout, color schemes, and animations. This project will enhance your design and UI/UX skills for Android app development.",
+        "date": "2024-04-20",
+        "marks": 85,
+        "image": "https://i.ibb.co/YQcDYNt/Android-Material-Design-App.png",
+        "level": "easy",
+        "email": "mahmudhasan@gamil.com"
+      },
+      {
+        "title": "Python Chatbot",
+        "note": "Build a chatbot in Python. This assignment will challenge your skills in natural language processing and chatbot development. Your task is to create a chatbot that can understand and respond to user queries. Utilize NLP libraries and machine learning techniques to train the chatbot. Pay attention to conversation flow and user experience. This project will enhance your chatbot development skills.",
+        "date": "2024-05-05",
+        "marks": 85,
+        "image": "https://i.ibb.co/vcR5P6C/Python-Chatbot.jpg",
+        "level": "medium",
+        "email": "mahmudhasan@gamil.com"
+      },
+      {
+        "title": "Node.js Real-Time Chat App",
+        "note": "Develop a real-time chat application using Node.js and WebSocket. This assignment will test your skills in building real-time web applications. Your task is to create a chat application that enables real-time messaging between users. Implement WebSocket communication and ensure smooth real-time updates. This project will enhance your knowledge of real-time web development.",
+        "date": "2024-05-20",
+        "marks": 90,
+        "image": "https://i.ibb.co/2W9HRMy/Node-js-Real-Time-Chat-App.jpg",
+        "level": "hard",
+        "email": "mahmudhasan@gamil.com"
+      }
+  ]
+  

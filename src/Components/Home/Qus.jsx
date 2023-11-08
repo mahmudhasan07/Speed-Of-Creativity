@@ -3,24 +3,24 @@
 const Qus = () => {
     return (
         <section>
-            <h1 className="text-3xl text-center font-bold lg:my-10 my-5">Frequently Asked Questions</h1>
+            <h1 className="lg:text-3xl text-xl text-center font-bold lg:my-10 my-5">Frequently Asked Questions</h1>
             <div className="flex justify-between flex-wrap my-5">
-                <div className="flex-1 my-auto">
+                <div className=" my-auto">
                     <img className=" mx-auto rounded-xl w-3/4 border-2 border-blue-600" src="https://i.ibb.co/0QGSMb1/Qus1.png" alt="" />
                 </div>
-                <div className="my-auto flex-1">
+                <div className="my-auto">
                     <div className="collapse collapse-plus bg-base-200">
                         <input type="radio" name="my-accordion-3" checked="checked" />
-                        <div className="collapse-title text-xl font-medium">
+                        <div className="collapse-title lg:text-xl text-lg font-medium">
                             What is ES6, and what is its significance in JavaScript development?
                         </div>
-                        <div className="collapse-content bg-blue-500 text-white lg:p-5 p-2">
+                        <div className="collapse-content bg-blue-500  text-white lg:p-5 p-2">
                             <p>ES6 (ECMAScript 2015) is a significant update to the JavaScript language that introduced many new features and improvements.</p>
                         </div>
                     </div>
                     <div className="collapse collapse-plus bg-base-200">
                         <input type="radio" name="my-accordion-3" />
-                        <div className="collapse-title text-xl font-medium">
+                        <div className="collapse-title lg:text-xl text-lg font-medium">
                             What is React, and why is it popular for building user interfaces?
                         </div>
                         <div className="collapse-content bg-blue-500 text-white lg:p-5 p-2">
@@ -29,7 +29,7 @@ const Qus = () => {
                     </div>
                     <div className="collapse collapse-plus bg-base-200">
                         <input type="radio" name="my-accordion-3" />
-                        <div className="collapse-title text-xl font-medium">
+                        <div className="collapse-title lg:text-xl text-lg font-medium">
                             What is Python, and why is it popular for programming?
                         </div>
                         <div className="collapse-content bg-blue-500 text-white lg:p-5 p-2">
@@ -38,7 +38,7 @@ const Qus = () => {
                     </div>
                     <div className="collapse collapse-plus bg-base-200">
                         <input type="radio" name="my-accordion-3" />
-                        <div className="collapse-title text-xl font-medium">
+                        <div className="collapse-title lg:text-xl text-lg font-medium">
                             What are ES6 classes, and how do they differ from constructor functions?
                         </div>
                         <div className="collapse-content bg-blue-500 text-white lg:p-5 p-2">

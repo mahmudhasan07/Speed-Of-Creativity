@@ -23,6 +23,11 @@ const Registration = () => {
         const email = from.email.value
         const password = from.password.value
 
+        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%^*?&])[A-Za-z\d@$!%^*?&]{6,}$/.test(password)) {
+            toast.warn('Password must be 6 character with UpperCase & LowerCase , symbol and number ')
+            return;
+        }
+
         createUser(email, password)
             .then(res => {
                 console.log(res);

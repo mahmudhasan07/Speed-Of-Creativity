@@ -20,21 +20,22 @@ const Takeassignment = () => {
         const from = e.target
         const assignmentLink = from.link.value
         const note = from.note.value
-        console.log(title,Submitemail,Givenemail,assignmentLink,note);
-        const info = {title,image,Submitemail,Givenemail,assignmentLink,note,mark}
-        axiosLink.post(`/submitted-assignment`,info)
-        .then(res=>{
-            console.log(res.data);
-            Swal.fire({
-                icon: "success",
-                title: "Submit",
-                text: "Successfully submit your assignment",
-                footer: '<a href="#">Why do I have this issue?</a>'
-              });
-        })
-        .catch(error=>{
-            console.log(error);
-        })
+        const file = from.file.value
+        console.log(title,Submitemail,Givenemail,assignmentLink,note, file);
+        // const info = {title,image,Submitemail,Givenemail,assignmentLink,note,mark}
+        // axiosLink.post(`/submitted-assignment`,info)
+        // .then(res=>{
+        //     console.log(res.data);
+        //     Swal.fire({
+        //         icon: "success",
+        //         title: "Submit",
+        //         text: "Successfully submit your assignment",
+        //         footer: '<a href="#">Why do I have this issue?</a>'
+        //       });
+        // })
+        // .catch(error=>{
+        //     console.log(error);
+        // })
     }
 
 
@@ -47,8 +48,10 @@ const Takeassignment = () => {
             </div>
             <div className="lg:my-10 my-5">
                 <form onSubmit={handlesubmit} className="text-center" action="">
-                    <input name="link" type="text" className="border-2 border-blue-600 p-2 w-96 rounded-2xl mb-5" placeholder="input your assignment google link" /> <br />
-                    {/* <input type="" className="border-2 border-blue-600 p-2  w-96 rounded-2xl" placeholder="give a short note of your assignment " /> */}
+                    <div className="mb-5">
+                    <input name="link" type="text" className="border-2 border-blue-600 p-2 w-96 rounded-2xl mb-2" placeholder="input your assignment google link" /> <br />
+                    <p><span className="text-lg font-bold">Hint: </span>Upload your pdf link in google drive then take <span className="text-lg font-bold">Embed Link</span> and post it </p>
+                    </div>
                     <textarea name="note" className="border-2 border-blue-600 p-2  w-96 rounded-2xl" placeholder={`Enter your assignment details here...`} rows={3} cols={0}></textarea><br /><br />
                     <button className="btn bg-blue-600 text-white">Submit Assignment</button>
                 </form>

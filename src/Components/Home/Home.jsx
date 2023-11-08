@@ -15,7 +15,7 @@ import 'swiper/css/pagination';
 const Home = () => {
     return (
         <section>
-            <div className=" lg:mx-10 my-5">
+            <div className=" lg:mx-10 my-5 ">
                 <Swiper
                     // install Swiper modules
                     modules={[Navigation, EffectCoverflow, Pagination, Autoplay, Scrollbar, A11y]}
@@ -37,7 +37,7 @@ const Home = () => {
                     }}
                     pagination={true}
                     scrollbar={{ draggable: true }}
-                className="h-1/2"
+                className="h-1/2 "
                 >
                     <SwiperSlide><Lottie animationData={animation}></Lottie></SwiperSlide>
                     <SwiperSlide><Lottie animationData={animation2}></Lottie></SwiperSlide>

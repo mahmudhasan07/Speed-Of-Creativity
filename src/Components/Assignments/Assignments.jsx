@@ -109,9 +109,9 @@ const Assignments = () => {
     return (
         <section>
             <h1 className="text-3xl text-center my-5">All Assignments</h1>
-            <div className="flex justify-around">
+            <div className="flex flex-wrap justify-around">
                 <div className="   p-5 h-fit border-r-4">
-                    <form action="" className="flex justify-start text-xl  flex-col">
+                    <form action="" className="flex lg:justify-start  text-xl  flex-col">
                         <span><input type="checkbox" />upto 90 marks</span>
                         <span><input type="checkbox" />upto 80 marks</span>
                         <span><input type="checkbox" />upto 70 marks</span>
@@ -166,7 +166,7 @@ const Card = ({ card }) => {
     }
     const { level, marks } = card
     return (
-        <div className="w-96 border-2 border-blue-700 p-2 mx-auto rounded-lg">
+        <div className="lg:w-96 border-2 border-blue-700 p-2 mx-auto rounded-lg">
             <img className="h-72" src={card.image} alt="" />
             <div className="my-5">
                 <h1 className="text-xl font-semibold">{card.title}</h1>
@@ -175,7 +175,7 @@ const Card = ({ card }) => {
                 <p><span className="text-lg">Marks: </span>{card.marks}</p>
                 <p className="font-semibold"><span className="text-lg">Posted By: </span>{card.email}</p>
             </div>
-            <div className="flex justify-around">
+            <div className="flex flex-wrap justify-around">
                 <button onClick={() => navigate(`/assignment/info/${card.title}`)} className="btn bg-blue-600 text-white">View Assignment</button>
                 <button onClick={() => handleupdate(card.email)} className="btn bg-blue-600 text-white">Update Assignment</button>
             </div>

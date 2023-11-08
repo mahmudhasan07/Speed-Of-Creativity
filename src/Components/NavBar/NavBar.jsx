@@ -31,10 +31,10 @@ const NavBar = () => {
             {/* <NavLink to={`/contact`}><li>Contact Us</li></NavLink> */}
         </>
     return (
-        <section className="flex justify-around border-2 bg-blue-600 text-white border-black py-4">
+        <section className="flex flex-wrap justify-around border-2 bg-blue-600 text-white border-black py-4">
             <div>
-                <div className="hs-dropdown relative inline-flex lg:hidden ">
-                    <button id="hs-dropdown-default" type="button" className="hs-dropdown-toggle py-3 px-4 inline-flex justify-center text-white text-2xl border-2  btn-sm items-center gap-2 rounded-md  font-medium ">
+                <div className="hs-dropdown relative mr-2 inline-flex lg:hidden ">
+                    <button id="hs-dropdown-default" type="button" className=" hs-dropdown-toggle py-3 px-4 inline-flex justify-center text-white text-2xl border-2  btn-sm items-center gap-2 rounded-md  mt-3 font-medium ">
                         <AiOutlineMenuUnfold></AiOutlineMenuUnfold>
 
                     </button>
@@ -43,17 +43,34 @@ const NavBar = () => {
                         <ul className="text-black">
 
                             <NavLink to={`/`}><li className="my-1 font-semibold">Home</li></NavLink>
-                            <hr />
+                            <hr className="border-gray-500" />
                             <NavLink to={`/assignments`}><li className="my-1 font-semibold">All Assignments</li></NavLink>
-                            <hr />
+                            <hr className="border-gray-500" />
                             <NavLink to={`/add-assignment`}><li className="my-1 font-semibold">Create  Assignment</li></NavLink>
-                            <hr />
+                            <hr className="border-gray-500" />
                             <NavLink to={`/my-assignment`}><li className="my-1 font-semibold">My Assignment</li></NavLink>
-                            <hr />
+                            <hr className="border-gray-500" />
                             <NavLink to={`/submitted`}><li className="my-1 font-semibold">Submitted Assignment</li></NavLink>
                         </ul>
-                        <div className=" ">
-                            <NavLink to={`/login`}><button className="btn btn-sm" >Login</button></NavLink>
+                        <div className=" text-start ">
+                            {/* <NavLink to={`/login`}><button className="btn btn-sm my-2 bg-blue-600 text-white" >Login</button></NavLink> */}
+                            {
+                                user ?
+                                    <div className="hs-dropdown text-black">
+                                        <details className="dropdown ">
+                                            <summary className="btn"><img className="rounded-full w-8" src={user.photoURL} alt="" /></summary>
+                                            <ul className="p-2 text-center shadow menu dropdown-content z-10 bg-base-100 rounded-box w-fit">
+                                                <img id="" className="w-10 mx-auto" src={user.photoURL} alt="" />
+                                                <p className="mb-1 font-semibold">{user.displayName}</p>
+                                                <p className="mb-1 font-semibold">{user.email}</p>
+                                                <NavLink to={`/`}><button onClick={() => logOut()} className="btn my-1  btn-sm" >LogOut</button></NavLink>
+                                            </ul>
+                                        </details>
+                                    </div>
+                                    :
+                                    <NavLink to={`/login`}><button className="btn btn-sm" >Login</button></NavLink>
+                            }
+
                         </div>
                     </div>
                 </div>
@@ -68,7 +85,7 @@ const NavBar = () => {
                     }
                 </ul>
             </div>
-            
+
             <div className="hidden lg:flex my-auto hs-dropdown">
                 {
                     user ?
@@ -76,12 +93,12 @@ const NavBar = () => {
                             <details className="dropdown">
                                 <summary className="btn"><img className="rounded-full w-8" src={user.photoURL} alt="" /></summary>
                                 <ul className="p-2 text-center shadow menu dropdown-content z-10 bg-base-100 rounded-box w-fit">
-                                <img id="" className="w-10 mx-auto" src={user.photoURL} alt="" />
-                                <p className="mb-1 font-semibold">{user.displayName}</p>
-                                <p className="mb-1 font-semibold">{user.email}</p>
-                            <NavLink to={`/`}><button onClick={() => logOut()} className="btn my-1  btn-sm" >LogOut</button></NavLink>
+                                    <img id="" className="w-10 mx-auto" src={user.photoURL} alt="" />
+                                    <p className="mb-1 font-semibold">{user.displayName}</p>
+                                    <p className="mb-1 font-semibold">{user.email}</p>
+                                    <NavLink to={`/`}><button onClick={() => logOut()} className="btn my-1  btn-sm" >LogOut</button></NavLink>
                                 </ul>
-                            </details> 
+                            </details>
                         </div>
                         :
                         <NavLink to={`/login`}><button className="btn btn-sm" >Login</button></NavLink>

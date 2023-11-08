@@ -43,22 +43,22 @@ const AddItem = () => {
             <div className="mx-10 border-2 bg-base-100 p-5 rounded-xl shadow-2xl">
                 <form onSubmit={handleadditem} className="" action="">
                     <div className="flex my-1 flex-wrap justify-center w-full ">
-                        <div className="flex-1">
+                        <div className=" lg:flex-1 md:flex-1">
                             <label className="label">
                                 <span className=" font-semibold">Title</span>
                             </label>
-                            <input type="text" placeholder="title" name="title" className="border-2 border-black w-2/3 rounded-md p-1" />
+                            <input type="text" placeholder="title" name="title" className="border-2 border-black lg:w-2/3 rounded-md p-1"  required/>
                         </div>
-                        <div className="flex-1">
+                        <div className="lg:flex-1 md:flex-1">
                             <label className="label">
                                 <span className=" font-semibold">Description</span>
                             </label>
-                            <input type="text" placeholder="description" name="note" className="border-2 border-black w-2/3 rounded-md p-1" />
+                            <input type="text" placeholder="description" name="note" className=" border-black lg:w-2/3 rounded-md p-1 " required />
                         </div>
 
                     </div>
-                    <div className="flex my-1 flex-wrap justify-center w-full ">
-                        <div className="flex-1">
+                    <div className="flex my-1 flex-wrap justify-center w-full  ">
+                        <div className="lg:flex-1 md:flex-1 ">
                             <label className="label">
                                 <span className=" font-semibold">Difficulty Level</span>
                             </label>
@@ -68,26 +68,26 @@ const AddItem = () => {
                                 <option value="hard">Hard</option>
                             </select>
                         </div>
-                        <div className="flex-1">
+                        <div className="lg:flex-1 md:flex-1">
                             <label className="label">
                                 <span className=" font-semibold">Due Date</span>
                             </label>
-                            <input type="date" placeholder="date" name="date" className="border-2 border-black w-2/3 rounded-md p-1" />
+                            <input type="date" placeholder="date" name="date" className="border-2 border-black lg:w-2/3 rounded-md p-1" required />
                         </div>
 
                     </div>
                     <div className="flex my-1 flex-wrap justify-center w-full ">
-                        <div className="flex-1">
+                        <div className="lg:flex-1 md:flex-1">
                             <label className="label">
                                 <span className=" font-semibold">Marks</span>
                             </label>
-                            <input type="number" placeholder="marks" name="marks" className="border-2 border-black w-2/3 rounded-md p-1" />
+                            <input type="number" placeholder="marks" name="marks" className="border-2 border-black lg:w-2/3 rounded-md p-1" required/>
                         </div>
-                        <div className="flex-1">
+                        <div className="lg:flex-1 md:flex-1">
                             <label className="label">
                                 <span className=" font-semibold">Image URL</span>
                             </label>
-                            <input type="text" placeholder="image" name="image" className="border-2 border-black w-2/3 rounded-md p-1" />
+                            <input type="text" placeholder="image" name="image" className="border-2 border-black lg:w-2/3 rounded-md p-1" required/>
                         </div>
 
                     </div>
