@@ -1,23 +1,33 @@
-import { useRef } from "react";
-import { NavLink, useLoaderData } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { NavLink , useParams } from "react-router-dom";
 import useAxios, { AxiosSource } from "../Axios/useAxios";
+import { pdfjs } from 'react-pdf';
 
 
 const GivenMarks = () => {
-    const loader = useLoaderData()
+    const [items, setitmes] = useState([])
+    const { id } = useParams()
+    console.log(id);
     const axiosLink = useAxios(AxiosSource)
-    console.log(loader);
     const mark = useRef()
     const text = useRef()
+
+    useEffect(() => {
+        axiosLink.get(`http://localhost:5000/submitted-assignment/${id}`)
+            .then(res => {
+                setitmes(res.data)
+
+            })
+    }, [axiosLink, id])
 
     const handlesubmit = (e) => {
         e.preventDefault()
         const Givenmark = mark.current.value
         const Comment = text.current.value
-        const statuss = "Complete" 
+        const statuss = "Complete"
         // console.log(Givenmark, Comment);
         const info = { Givenmark, Comment, statuss }
-        axiosLink.put(`/submitted-assignment/${loader._id}`, info)
+        axiosLink.put(`/submitted-assignment/${items._id}`, info)
             .then(res => {
                 console.log(res.data);
             })
@@ -28,6 +38,8 @@ const GivenMarks = () => {
 
     }
 
+    // const Document = new document   
+
 
     return (
         <div className="lg:my-10 my-5">
@@ -36,11 +48,12 @@ const GivenMarks = () => {
                 <label className=" " htmlFor="">
                     <span className="text-xl">Assignment Link </span>
                 </label> <br /> <br />
-                <NavLink className={`bg-blue-600  text-white p-2 rounded-lg`} to={loader.assignmentLink} target="_blank">{loader.assignmentLink}</NavLink>
+                <NavLink className={`bg-blue-600  text-white p-2 rounded-lg`} to={items.assignmentLink} target="_blank">{items.assignmentLink}</NavLink>
             </div>
+                {/* <Document>{items.assignmentLink}</Document> */}
 
             <div className="mx-auto w-1/2 lg:my-10 my-5 text-center">
-                <h1 className="text-lg my-2 font-semibold ">Given Marks (Out of ${loader.mark})</h1>
+                <h1 className="text-lg my-2 font-semibold ">Given Marks (Out of {items.mark})</h1>
                 <div className="">
                     <input ref={mark} className="border-2 border-blue-500 mb-2 p-1" type="number" name="" id="" /> <br />
                     <input ref={text} className="border-2 border-blue-500 mb-2 p-2 w-96" type="text" name="" id="" /> <br />

@@ -1,12 +1,14 @@
+/* eslint-disable react-refresh/only-export-components */
 import axios from "axios"
 import { useEffect } from "react";
 
 export const AxiosSource = axios.create({
     baseURL : 'http://localhost:5000',
-    withCredentials : true
+    withCredentials : true 
 })
 const useAxios = () => {
     useEffect(()=>{
+
         AxiosSource.interceptors.response.use(res =>{
             return res;
         }, error=>{

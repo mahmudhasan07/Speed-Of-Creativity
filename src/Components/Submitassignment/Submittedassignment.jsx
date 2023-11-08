@@ -1,19 +1,31 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { Context } from "../ContextAPI/ContextAPI";
 import Swal from "sweetalert2";
+import useAxios, { AxiosSource } from "../Axios/useAxios";
 
 const Submittedassignment = () => {
-    const loader = useLoaderData()
+    // const loader = useLoaderData()
+    // console.log(loader);
+    const [items, setitmes] = useState([])
+    const axiosLink = useAxios(AxiosSource)
 
-    console.log(loader);
+
+    useEffect(() => {
+        axiosLink.get('/submitted-assignment')
+            .then(res => {
+                setitmes(res.data)
+            })
+    }, [axiosLink,setitmes])
+
+    // console.log(loader);
     return (
         <section>
             <h1 className="text-3xl text-center font-bold my-7">Submitted Assignment</h1>
             <div className="flex flex-col gap-5 lg:my-10 my-5">
                 {
-                    loader.map(element => <Card key={element._id} card={element}></Card>)
+                    items?.map(element => <Card key={element._id} card={element}></Card>)
                 }
             </div>
         </section>
@@ -22,22 +34,22 @@ const Submittedassignment = () => {
 
 const Card = ({ card }) => {
     // const [task, settask] = useState('processing')
-    const {user} = useContext(Context)
+    const { user } = useContext(Context)
     const navigate = useNavigate()
 
     const handlemark = (id) => {
-        if(card.Givenemail == user.email){
+        if (card.Givenemail == user.email) {
             navigate(`/given-marks/${id}`)
         }
-        else{
+        else {
             Swal.fire({
                 icon: "error",
                 title: "Unauthorize",
                 text: "You don't have access to give marks on this assignment",
                 footer: '<a href="#">Why do I have this issue?</a>'
-              });
+            });
         }
-        
+
 
     }
 
@@ -46,7 +58,7 @@ const Card = ({ card }) => {
             <img className="w-52" src={card.image} alt="" />
             <div className="my-auto">
                 <h1 className="text-xl font-semibold">{card.title}</h1>
-                <p><span className="font-semibold">Status :</span> <span>{card.status? card.status : "Processing"}</span></p>
+                <p><span className="font-semibold">Status :</span> <span>{card.status ? card.status : "Processing"}</span></p>
             </div>
             <div className="my-auto">
                 <h1><span className="font-semibold">Submitted By: </span>{card.Submitemail}</h1>

@@ -1,18 +1,31 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { Context } from '../ContextAPI/ContextAPI';
+import useAxios, { AxiosSource } from '../Axios/useAxios';
 
 const MyAssignment = () => {
-    const loader = useLoaderData()
     const { user } = useContext(Context)
-    const items = loader.filter(element => element.Submitemail == user?.email)
+    const axiosLink = useAxios(AxiosSource)
+    const [items, setitmes] = useState([])
+
+
+    // const items = loader.filter(element => element.Submitemail == user?.email)
+
+    useEffect(() => {
+        axiosLink.get(`/submitted-assignment/email/${user.email}`)
+            .then(res => {
+                console.log(res.data);
+                setitmes(res.data)
+            })
+    }, [axiosLink,user.email])
+
     console.log(items);
     return (
         <section>
-            <h1 className="text-3xl text-center font-bold my-7">Submitted Assignment</h1>
+            <h1 className="text-3xl text-center font-bold my-7">My Submitted Assignment</h1>
             <div className="flex flex-col gap-5 lg:my-10 my-5">
                 {
-                    items.map(element => <Card key={element._id} card={element}></Card>)
+                    items?.map(element => <Card key={element._id} card={element}></Card>)
                 }
             </div>
         </section>

@@ -47,7 +47,7 @@ const Login = () => {
             <div className=" min-h-screen hero  bg-opacity-30 text-white">
                 <div className=" my-auto hero-overlay  lg:w-1/3 bg-transparent backdrop-blur-lg mx-auto ">
                     <div className=" card w-full  p-3  border-4  shadow-2xl">
-                        <h1 className="text-4xl text-center font-bold ">Log In </h1>
+                        <h1 className="text-4xl text-center font-bold text-blue-600">Log In </h1>
                         <hr className="mx-3 border-2 mt-5" />
                         <form onSubmit={handlelogin} className="card-body">
                             <div className="form-control">

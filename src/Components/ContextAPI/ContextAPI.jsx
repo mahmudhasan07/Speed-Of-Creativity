@@ -49,6 +49,7 @@ const ContextAPI = ({ children }) => {
                 axiosLink.post(`/jwt`, { email })
                     .then(res => {
                         // console.log(res.data);
+                        return res.data
                     })
                     .catch(error => {
                         console.log(error);

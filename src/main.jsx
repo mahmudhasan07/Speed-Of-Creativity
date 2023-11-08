@@ -69,13 +69,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/submitted",
-        element: <Privetrouter><Submittedassignment></Submittedassignment></Privetrouter>,
-        loader: () => fetch('http://localhost:5000/submitted-assignment')
+        element: <Privetrouter><Submittedassignment></Submittedassignment></Privetrouter>
+        // loader: () => fetch('http://localhost:5000/submitted-assignment')
       },
       {
         path: `/given-marks/:id`,
         element: <GivenMarks></GivenMarks>,
-        loader: ({ params }) => fetch(`http://localhost:5000/submitted-assignment/${params.id}`)
+        // loader: ({ params }) => fetch(`http://localhost:5000/submitted-assignment/${params.id}`)
       },
       {
         path: '/login',
