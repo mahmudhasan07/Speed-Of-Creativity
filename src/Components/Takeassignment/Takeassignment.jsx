@@ -13,6 +13,7 @@ const Takeassignment = () => {
     const Givenemail = loader.email
     const mark = loader.marks
     const image = loader.image
+    const status = "Pending"
     const axiosLink = useAxios(AxiosSource)
 
     const handlesubmit=(e)=>{
@@ -20,22 +21,21 @@ const Takeassignment = () => {
         const from = e.target
         const assignmentLink = from.link.value
         const note = from.note.value
-        const file = from.file.value
-        console.log(title,Submitemail,Givenemail,assignmentLink,note, file);
-        // const info = {title,image,Submitemail,Givenemail,assignmentLink,note,mark}
-        // axiosLink.post(`/submitted-assignment`,info)
-        // .then(res=>{
-        //     console.log(res.data);
-        //     Swal.fire({
-        //         icon: "success",
-        //         title: "Submit",
-        //         text: "Successfully submit your assignment",
-        //         footer: '<a href="#">Why do I have this issue?</a>'
-        //       });
-        // })
-        // .catch(error=>{
-        //     console.log(error);
-        // })
+        console.log(title,Submitemail,Givenemail,assignmentLink,note,status);
+        const info = {title,image,Submitemail,Givenemail,assignmentLink,note,mark,status}
+        axiosLink.post(`/submitted-assignment`,info)
+        .then(res=>{
+            console.log(res.data);
+            Swal.fire({
+                icon: "success",
+                title: "Submit",
+                text: "Successfully submit your assignment",
+                footer: '<a href="#">Why do I have this issue?</a>'
+              });
+        })
+        .catch(error=>{
+            console.log(error);
+        })
     }
 
 

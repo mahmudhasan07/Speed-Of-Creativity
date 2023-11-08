@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
 import { Context } from '../ContextAPI/ContextAPI';
 import useAxios, { AxiosSource } from '../Axios/useAxios';
 
@@ -7,6 +6,7 @@ const MyAssignment = () => {
     const { user } = useContext(Context)
     const axiosLink = useAxios(AxiosSource)
     const [items, setitmes] = useState([])
+    const [complete, setcomplete] = useState([])
 
 
     // const items = loader.filter(element => element.Submitemail == user?.email)
@@ -17,7 +17,12 @@ const MyAssignment = () => {
                 console.log(res.data);
                 setitmes(res.data)
             })
-    }, [axiosLink,user.email])
+    }, [axiosLink, user.email])
+
+    useEffect(() => {
+        const item = items?.filter(element => element.status.toLowerCase() == "complete")
+        setcomplete(item)
+    }, [items])
 
     console.log(items);
     return (
@@ -25,7 +30,9 @@ const MyAssignment = () => {
             <h1 className="text-3xl text-center font-bold my-7">My Submitted Assignment</h1>
             <div className="flex flex-col gap-5 lg:my-10 my-5">
                 {
-                    items?.map(element => <Card key={element._id} card={element}></Card>)
+                   complete.length !== 0 ? complete?.map(element => <Card key={element._id} card={element}></Card>)
+                   :
+                   <h1 className='text-xl text-center'>Your Assignment is not checked yet</h1>
                 }
             </div>
         </section>
@@ -38,7 +45,7 @@ const Card = ({ card }) => {
             <img className="w-52" src={card.image} alt="" />
             <div className="my-auto">
                 <h1 className="text-xl font-semibold">{card.title}</h1>
-                <p><span className="font-semibold">Status :</span> <span>{card.status ? card.status : "Processing"}</span></p>
+                <p><span className="font-semibold">Status :</span> <span className='border-2 p-1 bg-gray-300 rounded-xl'>{card.status ? card.status : "Processing"}</span></p>
             </div>
             <div className="my-auto">
                 <h1><span className="font-semibold">Submitted By: </span>{card.Submitemail}</h1>

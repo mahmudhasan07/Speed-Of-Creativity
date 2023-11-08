@@ -37,7 +37,7 @@ const Home = () => {
                     }}
                     pagination={true}
                     scrollbar={{ draggable: true }}
-                className="h-1/2 "
+                className=""
                 >
                     <SwiperSlide><Lottie animationData={animation}></Lottie></SwiperSlide>
                     <SwiperSlide><Lottie animationData={animation2}></Lottie></SwiperSlide>

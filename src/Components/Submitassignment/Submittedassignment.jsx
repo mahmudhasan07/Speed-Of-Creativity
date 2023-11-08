@@ -6,9 +6,9 @@ import Swal from "sweetalert2";
 import useAxios, { AxiosSource } from "../Axios/useAxios";
 
 const Submittedassignment = () => {
-    // const loader = useLoaderData()
-    // console.log(loader);
+    const { user } = useContext(Context)
     const [items, setitmes] = useState([])
+    const [pending, setpending] = useState([])
     const axiosLink = useAxios(AxiosSource)
 
 
@@ -17,15 +17,52 @@ const Submittedassignment = () => {
             .then(res => {
                 setitmes(res.data)
             })
-    }, [axiosLink,setitmes])
+    }, [axiosLink, setitmes])
 
-    // console.log(loader);
+    console.log(items.length);
+
+    useEffect(() => {
+        const item = items.filter(element => element.status.toLowerCase() == "pending")
+        setpending(item)
+    }, [items])
+
+    const handlefind = () => {
+
+        if(user.email){
+            axiosLink.get(`/submitted-assignment/email/${user.email}`)
+            .then(res => {
+                console.log(res.data);
+                setitmes(res.data)
+
+            })
+            .catch(error => {
+                console.log(error);
+            })
+        }
+        else{
+            Swal.fire({
+                icon: "error",
+                title: "UnAuthorize",
+                text: "You are not login yet",
+                footer: '<a href="#">Why do I have this issue?</a>'
+              });
+        }
+        
+
+    }
+
     return (
         <section>
             <h1 className="text-3xl text-center font-bold my-7">Submitted Assignment</h1>
+            <div className="text-center">
+                <h1 className="text-lg">See Who Submit your given Assignment</h1>
+                <button onClick={handlefind} className="btn btn-sm bg-blue-600 my-2 text-white hover:text-black">Click Here</button>
+            </div>
             <div className="flex flex-col gap-5 lg:my-10 my-5">
                 {
-                    items?.map(element => <Card key={element._id} card={element}></Card>)
+                    pending.length !== 0 ? pending?.map(element => <Card key={element._id} card={element}></Card>)
+                        :
+                        <h1 className="text-2xl text-center ">No Assignment are Submitted </h1>
                 }
             </div>
         </section>
@@ -33,7 +70,6 @@ const Submittedassignment = () => {
 };
 
 const Card = ({ card }) => {
-    // const [task, settask] = useState('processing')
     const { user } = useContext(Context)
     const navigate = useNavigate()
 
@@ -58,7 +94,7 @@ const Card = ({ card }) => {
             <img className="w-52" src={card.image} alt="" />
             <div className="my-auto">
                 <h1 className="text-xl font-semibold">{card.title}</h1>
-                <p><span className="font-semibold">Status :</span> <span>{card.status ? card.status : "Processing"}</span></p>
+                <p><span className="font-semibold">Status :</span> <span className="border-2 p-1 bg-gray-300 rounded-xl">{card.status ? card.status : "Pending"}</span></p>
             </div>
             <div className="my-auto">
                 <h1><span className="font-semibold">Submitted By: </span>{card.Submitemail}</h1>

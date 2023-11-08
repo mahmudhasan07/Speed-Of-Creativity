@@ -40,17 +40,16 @@ const router = createBrowserRouter([
       {
         path: '/assignments',
         element: <Assignments></Assignments>,
-        loader: async () => await fetch('http://localhost:5000/items')
+        loader: async () => await fetch('https://speed-of-creativity.vercel.app/items')
       },
       {
         path: '/my-assignment',
-        element : <Privetrouter><MyAssignment></MyAssignment></Privetrouter>,
-        loader : ()=> fetch(`http://localhost:5000/submitted-assignment`)
+        element : <Privetrouter><MyAssignment></MyAssignment></Privetrouter>
       },
       {
         path: '/search/:text',
         element: <Assignments></Assignments>,
-        loader: async () => await fetch('http://localhost:5000/items')
+        loader: async () => await fetch('https://speed-of-creativity.vercel.app/items')
       },
       {
         path: '/assignment/info/:title',
@@ -60,22 +59,20 @@ const router = createBrowserRouter([
       {
         path: '/assignment/update/:id',
         element: <Privetrouter><UpdateInfo></UpdateInfo></Privetrouter>,
-        loader: ({ params }) => fetch(`http://localhost:5000/items/update/${params.id}`)
+        loader: ({ params }) => fetch(`https://speed-of-creativity.vercel.app/items/update/${params.id}`)
       },
       {
         path: "/submit-assignment/:id",
         element: <Privetrouter><Takeassignment></Takeassignment></Privetrouter>,
-        loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`)
+        loader: ({ params }) => fetch(`https://speed-of-creativity.vercel.app/items/${params.id}`)
       },
       {
         path: "/submitted",
-        element: <Privetrouter><Submittedassignment></Submittedassignment></Privetrouter>
-        // loader: () => fetch('http://localhost:5000/submitted-assignment')
+        element: <Submittedassignment></Submittedassignment>
       },
       {
         path: `/given-marks/:id`,
-        element: <GivenMarks></GivenMarks>,
-        // loader: ({ params }) => fetch(`http://localhost:5000/submitted-assignment/${params.id}`)
+        element: <Privetrouter><GivenMarks></GivenMarks></Privetrouter>
       },
       {
         path: '/login',

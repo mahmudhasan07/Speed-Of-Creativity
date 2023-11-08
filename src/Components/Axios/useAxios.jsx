@@ -3,7 +3,7 @@ import axios from "axios"
 import { useEffect } from "react";
 
 export const AxiosSource = axios.create({
-    baseURL : 'http://localhost:5000',
+    baseURL : 'https://speed-of-creativity.vercel.app',
     withCredentials : true 
 })
 const useAxios = () => {

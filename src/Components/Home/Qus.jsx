@@ -5,10 +5,10 @@ const Qus = () => {
         <section>
             <h1 className="lg:text-3xl text-xl text-center font-bold lg:my-10 my-5">Frequently Asked Questions</h1>
             <div className="flex justify-between flex-wrap my-5">
-                <div className=" my-auto">
+                <div className="lg:flex-1 my-auto">
                     <img className=" mx-auto rounded-xl w-3/4 border-2 border-blue-600" src="https://i.ibb.co/0QGSMb1/Qus1.png" alt="" />
                 </div>
-                <div className="my-auto">
+                <div className="lg:flex-1 my-auto mr-2">
                     <div className="collapse collapse-plus bg-base-200">
                         <input type="radio" name="my-accordion-3" checked="checked" />
                         <div className="collapse-title lg:text-xl text-lg font-medium">
