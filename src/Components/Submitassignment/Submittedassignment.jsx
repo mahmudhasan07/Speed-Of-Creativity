@@ -28,7 +28,7 @@ const Submittedassignment = () => {
 
     const handlefind = () => {
 
-        if(user.email){
+        if(user?.email){
             axiosLink.get(`/submitted-assignment/email/${user.email}`)
             .then(res => {
                 console.log(res.data);

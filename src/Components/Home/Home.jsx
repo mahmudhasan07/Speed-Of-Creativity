@@ -10,6 +10,7 @@ import { Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectCoverflow } fr
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import Comment from "../Comment/Comment";
 
 
 const Home = () => {
@@ -51,6 +52,9 @@ const Home = () => {
             </div>
             <div>
                 <Qus></Qus>
+            </div>
+            <div>
+                <Comment></Comment>
             </div>
 
         </section>
